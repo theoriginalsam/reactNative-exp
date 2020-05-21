@@ -11,7 +11,6 @@ const List = () => {
 
   return (
     <FlatList
-      horizontal
       keyExtractor={friend => friend.name}
       data={friends}
       renderItem={({item}) => {
@@ -23,7 +22,7 @@ const List = () => {
 
 const styles = StyleSheet.create({
   textStyle: {
-    marginVertical: 200,
+    marginVertical: 20,
   },
 });
 

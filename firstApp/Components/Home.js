@@ -1,18 +1,15 @@
-
 import React from 'react';
-import {
-  
-  StyleSheet,
-  View,
-  Text,
-  
- } from 'react-native';
+import {StyleSheet, View, Text, Button, TouchableOpacity} from 'react-native';
 
-const Home = ()=>{
-  return(
-    <Text>Start with React</Text>
-  )
-}
+const Home = ({navigation}) => {
+  return (
+    <View>
+      <Text>Start with React</Text>
 
+      <Button title="List" onPress={() => navigation.navigate('List')} />
+      <Button title="List2" onPress={() => navigation.navigate('List')} />
+    </View>
+  );
+};
 
 export default Home;
