@@ -8,7 +8,7 @@ import {
   
  } from 'react-native';
 
-const List = ()=>{
+const Home = ()=>{
   return(
     <Text>Start with React</Text>
   )
