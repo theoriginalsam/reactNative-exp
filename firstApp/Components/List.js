@@ -4,9 +4,9 @@ import {StyleSheet, View, Text, FlatList} from 'react-native';
 const List = () => {
   const friends = [
     {name: 'Samir'},
-    {name: 'Sujan'},
-    {name: 'Arjun'},
-    {name: 'Sumit'},
+    {name: 'Friend 2'},
+    {name: 'Friend 3'},
+    {name: 'Friend 4'},
   ];
 
   return (
