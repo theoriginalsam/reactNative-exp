@@ -7,6 +7,7 @@ const List = () => {
     {name: 'Friend 2'},
     {name: 'Friend 3'},
     {name: 'Friend 4'},
+    {name: 'Friend 5'},
   ];
 
   return (
