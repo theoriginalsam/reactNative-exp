@@ -7,7 +7,7 @@ const Home = ({navigation}) => {
       <Text>Start with React</Text>
 
       <Button title="List" onPress={() => navigation.navigate('List')} />
-      <Button title="List2" onPress={() => navigation.navigate('List')} />
+      <Button title="List2" onPress={() => navigation.navigate('')} />
     </View>
   );
 };
