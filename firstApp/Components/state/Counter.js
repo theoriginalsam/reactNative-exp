@@ -17,7 +17,7 @@ const Counter = () => {
           setCounter(counter - 1);
         }}
         onHold={() => {
-          setCounter(counter - 1);
+          setCounter(counter + 1);
         }}
       />
       <Text>Counter :{counter}</Text>
