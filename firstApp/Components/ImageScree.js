@@ -8,7 +8,7 @@ const ImageScree = () => {
       <ImageDetail title="Forest" imageSrc={require('../assets/forest.jpg')} />
       <ImageDetail title="Beach" imageSrc={require('../assets/beach.jpg')} />
       <ImageDetail
-        title="Mountain"
+        title="Mountains"
         imageSrc={require('../assets/mountain.jpg')}
       />
     </View>
