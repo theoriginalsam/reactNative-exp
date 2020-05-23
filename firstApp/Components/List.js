@@ -24,7 +24,6 @@ const List = () => {
 const styles = StyleSheet.create({
   textStyle: {
     marginVertical: 30,
-    fontWeight: 100,
   },
 });
 
