@@ -6,8 +6,11 @@ const Home = ({navigation}) => {
     <View>
       <Text>Start with React</Text>
 
-      <Button title="List" onPress={() => navigation.navigate('List')} />
-      <Button title="List2" onPress={() => navigation.navigate('Image')} />
+      <Button title="To the list" onPress={() => navigation.navigate('List')} />
+      <Button
+        title="To the image Screen"
+        onPress={() => navigation.navigate('Image')}
+      />
     </View>
   );
 };
