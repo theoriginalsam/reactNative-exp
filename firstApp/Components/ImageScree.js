@@ -5,10 +5,12 @@ import ImageDetail from './reusableC/ImageDetail';
 const ImageScree = () => {
   return (
     <View>
-      <ImageDetail title="Forest" />
-      <ImageDetail />
-      <ImageDetail />
-      <ImageDetail />
+      <ImageDetail title="Forest" imageSrc={require('../assets/forest.jpg')} />
+      <ImageDetail title="Beach" imageSrc={require('../assets/beach.jpg')} />
+      <ImageDetail
+        title="Mountain"
+        imageSrc={require('../assets/mountain.jpg')}
+      />
     </View>
   );
 };
