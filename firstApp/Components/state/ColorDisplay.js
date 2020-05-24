@@ -62,3 +62,5 @@ const ColorDisplay = () => {
 const styles = StyleSheet.create({});
 
 export default ColorDisplay;
+
+//display
