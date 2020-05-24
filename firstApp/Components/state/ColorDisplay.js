@@ -3,17 +3,19 @@ import {StyleSheet, View, Text, Button} from 'react-native';
 import ColorS from '../reusableC/ColorScreen';
 
 const ColorDisplay = () => {
-  const [inc, setInc] = useState(1);
-  const [red, setRed] = useState(0);
-  const [green, setGreen] = useState(0);
-  const [blue, setBlue] = useState(0);
-  console.log(red);
+  const [inc, setInc] = useState(10);
+  const [red, setRed] = useState(100);
+  const [green, setGreen] = useState(100);
+  const [blue, setBlue] = useState(100);
+
   return (
     <View>
       <ColorS
         color="red"
         onIncrease={() => {
-          setRed(red + inc);
+          if (red + inc > 256) {
+            return;
+          } else setRed(red + inc);
         }}
         onDecrease={() => {
           setRed(red - inc);
