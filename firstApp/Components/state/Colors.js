@@ -5,7 +5,7 @@ const List = () => {
   return (
     <View>
       <Button title="Add a Color " />
-      <View style={{height: 100, width: 100, backgroundColor: generateC()}} />
+      <View style={{height: 100, width: 120, backgroundColor: generateC()}} />
     </View>
   );
 };
