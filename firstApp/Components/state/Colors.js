@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text, Button, FlatList} from 'react-native';
 
-const List = () => {
+const Colors = () => {
   const [colors, setColors] = useState([], 0);
   return (
     <View>
       <Button
         title="Add a Color "
         onPress={() => {
-          setColors([...colors, generateC()], colors.length);
+          setColors([...colors, generateC()]);
         }}
       />
 
@@ -18,9 +18,8 @@ const List = () => {
         renderItem={({item}) => {
           return (
             <View
-              style={{height: 100, width: 120, backgroundColor: generateC()}}>
-              <Text>{colors.length}</Text>
-            </View>
+              style={{height: 100, width: 120, backgroundColor: generateC()}}
+            />
           );
         }}
       />
@@ -37,4 +36,4 @@ const generateC = () => {
 
 const styles = StyleSheet.create({});
 
-export default List;
+export default Colors;
