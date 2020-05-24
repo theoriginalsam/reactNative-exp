@@ -5,7 +5,9 @@ import List from './Components/List';
 import ImageScree from './Components/ImageScree';
 import Counter from './Components/state/Counter';
 import Color from './Components/state/Colors';
+import ColorD from './Components/state/ColorDisplay';
 import React from 'react';
+import ColorS from './Components/reusableC/ColorScreen';
 
 const navigator = createStackNavigator(
   {
@@ -14,7 +16,9 @@ const navigator = createStackNavigator(
     Image: ImageScree,
     Counter: Counter,
     Color: Color,
+    ColorD: ColorD,
   },
+
   {
     initialRouteName: 'Home',
     defaultNavigationOptions: {

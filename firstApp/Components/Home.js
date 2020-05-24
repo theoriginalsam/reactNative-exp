@@ -19,6 +19,10 @@ const Home = ({navigation}) => {
         title="To the Color Screen"
         onPress={() => navigation.navigate('Color')}
       />
+      <Button
+        title="To the ColorD Screen"
+        onPress={() => navigation.navigate('ColorD')}
+      />
     </View>
   );
 };
