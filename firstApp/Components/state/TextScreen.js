@@ -19,7 +19,7 @@ const TextScreen = () => {
 const styles = StyleSheet.create({
   input: {
     margin: 10,
-    borderColor: 'black',
+    borderColor: 'red',
     borderWidth: 2,
   },
 });
