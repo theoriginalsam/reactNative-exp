@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
 
 const TextScreen = () => {
-  const [string, setString] = useState('Input here');
+  const [string, setString] = useState('');
   return (
     <View>
       <Text>Hello</Text>
@@ -19,7 +19,7 @@ const TextScreen = () => {
 const styles = StyleSheet.create({
   input: {
     margin: 10,
-    borderColor: 'red',
+    borderColor: 'grey',
     borderWidth: 2,
   },
 });
