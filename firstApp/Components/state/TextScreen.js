@@ -5,13 +5,14 @@ const TextScreen = () => {
   const [string, setString] = useState('');
   return (
     <View>
-      <Text>Hello</Text>
+      <Text>Enter a Password</Text>
       <TextInput
         style={styles.input}
         value={string}
         onChangeText={newValue => setString(newValue)}
       />
       <Text>My Name is {string}</Text>
+      {string.length < 5 ? <Text>Enter more</Text> : null}
     </View>
   );
 };
