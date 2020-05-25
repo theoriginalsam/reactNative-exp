@@ -6,6 +6,7 @@ import ImageScree from './Components/ImageScree';
 import Counter from './Components/state/Counter';
 import Color from './Components/state/Colors';
 import ColorD from './Components/state/ColorDisplay';
+import TextScreen from './Components/state/TextScreen';
 import React from 'react';
 import ColorS from './Components/reusableC/ColorScreen';
 
@@ -17,6 +18,7 @@ const navigator = createStackNavigator(
     Counter: Counter,
     Color: Color,
     ColorD: ColorD,
+    TextScreen: TextScreen,
   },
 
   {
