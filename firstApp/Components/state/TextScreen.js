@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
 
 const TextScreen = () => {
-  const [string, setString] = useState('');
+  const [string, setString] = useState('Input here');
   return (
     <View>
       <Text>Hello</Text>
