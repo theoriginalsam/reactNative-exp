@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   input: {
     margin: 10,
     borderColor: 'grey',
-    borderWidth: 2,
+    borderWidth: 1,
   },
 });
 
