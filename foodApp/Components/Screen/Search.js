@@ -11,7 +11,7 @@ const Search = () => {
         onTermChange={newString => setString(newString)}
         onTermSubmit={() => console.log(`Submitted`)}
       />
-      <Text>{string}</Text>
+      <Text> Searched for {string}</Text>
     </View>
   );
 };
