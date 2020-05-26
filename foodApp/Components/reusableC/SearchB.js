@@ -6,15 +6,16 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SearchB = () => {
   return (
     <View style={styles.searchStyle}>
-      <Icon name="search" color="#ccc" size={30} />
+      <Icon style={styles.iconS} name="search" color="#ccc" size={30} />
 
-      <TextInput style={styles.textInput} />
+      <TextInput placeholder="Search" style={styles.textInput} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   searchStyle: {
+    marginTop: 10,
     marginHorizontal: 10,
 
     borderRadius: 6,
@@ -23,6 +24,9 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
+  },
+  iconS: {
+    alignSelf: 'center',
   },
 });
 
