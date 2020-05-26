@@ -4,7 +4,9 @@ import {StyleSheet, View, Text} from 'react-native';
 const BoxScreen = () => {
   return (
     <View>
-      <Text>Hey There</Text>
+      <Text> Child 1</Text>
+      <Text>Child 2 </Text>
+      <Text>Child 3 </Text>
     </View>
   );
 };
