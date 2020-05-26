@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import SearchB from '../reusableC/SearchB';
 
 const Search = () => {
+  const [string, setString] = useState('');
   return (
     <View>
-      <SearchB />
+      <SearchB
+        string={string}
+        onTermChange={newString => setString(newString)}
+      />
+      <Text>{string}</Text>
     </View>
   );
 };

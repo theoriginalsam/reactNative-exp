@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SearchB = () => {
+const SearchB = ({string, onTermChange}) => {
   return (
     <View style={styles.searchStyle}>
       <Icon style={styles.iconS} name="search" color="#ccc" size={30} />
 
-      <TextInput placeholder="Search" style={styles.textInput} />
+      <TextInput
+        placeholder="Search"
+        style={styles.textInput}
+        value={string}
+        onChangeText={newString => onTermChange(newString)}
+      />
     </View>
   );
 };
