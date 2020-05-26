@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'black',
     textAlign: 'center',
+    top: 10,
   },
   text2Style: {
     margin: 5,
@@ -24,14 +25,12 @@ const styles = StyleSheet.create({
     borderColor: 'black',
 
     textAlign: 'center',
-    position: 'absolute',
   },
   text3Style: {
     margin: 5,
     borderWidth: 2,
     borderColor: 'black',
     textAlign: 'center',
-    position: 'absolute',
   },
   viewStyle: {
     borderWidth: 3,
