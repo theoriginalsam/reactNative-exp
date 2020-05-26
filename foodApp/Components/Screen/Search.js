@@ -16,7 +16,7 @@ const Search = () => {
       <Text
         style={{
           fontSize: 20,
-          fontWeight: 'bold',
+          fontWeight: '400',
           position: 'absolute',
           top: 55,
           left: 100,
