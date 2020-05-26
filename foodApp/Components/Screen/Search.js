@@ -7,15 +7,31 @@ const Search = () => {
   return (
     <View>
       <SearchB
+        style={styles.fontS}
         string={string}
         onTermChange={newString => setString(newString)}
         onTermSubmit={() => console.log(`Submitted`)}
       />
-      <Text> Searched for {string}</Text>
+      <Text> Searched for</Text>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: 'bold',
+          position: 'absolute',
+          top: 55,
+          left: 100,
+          right: 10,
+        }}>
+        {string}
+      </Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  fontS: {
+    fontSize: 20,
+  },
+});
 
 export default Search;
