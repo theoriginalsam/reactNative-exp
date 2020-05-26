@@ -14,10 +14,10 @@ import ColorS from './Components/reusableC/ColorScreen';
 const navigator = createStackNavigator(
   {
     Home: Home,
-    List: List,
-    Image: ImageScree,
-    Counter: Counter,
-    Color: Color,
+    // List: List,
+    // Image: ImageScree,
+    // Counter: Counter,
+    // Color: Color,
     ColorD: ColorD,
     TextScreen: TextScreen,
     BoxScreen: BoxScreen,

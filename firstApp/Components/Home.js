@@ -6,7 +6,7 @@ const Home = ({navigation}) => {
     <View>
       <Text>Start with React</Text>
 
-      <Button title="To the list" onPress={() => navigation.navigate('List')} />
+      {/* <Button title="To the list" onPress={() => navigation.navigate('List')} />
       <Button
         title="To the image Screen"
         onPress={() => navigation.navigate('Image')}
@@ -18,7 +18,7 @@ const Home = ({navigation}) => {
       <Button
         title="To the Color Screen"
         onPress={() => navigation.navigate('Color')}
-      />
+      /> */}
       <Button
         title="To the ColorD Screen"
         onPress={() => navigation.navigate('ColorD')}
