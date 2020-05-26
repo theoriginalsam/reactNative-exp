@@ -12,7 +12,7 @@ const Search = () => {
         onTermChange={newString => setString(newString)}
         onTermSubmit={() => console.log(`Submitted to the `)}
       />
-      <Text> Searched for</Text>
+      <Text> Searched :</Text>
       <Text
         style={{
           fontSize: 20,
