@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     borderColor: 'black',
 
     textAlign: 'center',
+    backgroundColor: 'green',
+    ...StyleSheet.absoluteFillObject,
   },
   text3Style: {
     margin: 5,
