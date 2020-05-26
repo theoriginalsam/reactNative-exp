@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   text1Style: {
     height: 100,
     width: 100,
-    margin: 5,
+
     borderWidth: 2,
     borderColor: 'black',
     backgroundColor: 'yellow',
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   text2Style: {
     height: 100,
     width: 100,
-    margin: 5,
+
     borderWidth: 2,
     borderColor: 'black',
     alignSelf: 'flex-end',
@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
   text3Style: {
     height: 100,
     width: 100,
-    margin: 5,
+
     borderWidth: 2,
     backgroundColor: 'green',
   },
   viewStyle: {
     borderWidth: 3,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
 
     borderColor: 'red',
     height: 220,

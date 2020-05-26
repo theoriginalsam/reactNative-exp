@@ -18,9 +18,9 @@ const navigator = createStackNavigator(
     // Image: ImageScree,
     // Counter: Counter,
     // Color: Color,
-    ColorD: ColorD,
-    TextScreen: TextScreen,
-    BoxScreen: BoxScreen,
+    // ColorD: ColorD,
+    // TextScreen: TextScreen,
+    // BoxScreen: BoxScreen,
   },
 
   {
