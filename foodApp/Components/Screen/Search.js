@@ -9,7 +9,7 @@ const Search = () => {
       <SearchB
         string={string}
         onTermChange={newString => setString(newString)}
-        onTermSubmit={() => console.log(`${string}`)}
+        onTermSubmit={() => console.log(`Submitted`)}
       />
       <Text>{string}</Text>
     </View>
