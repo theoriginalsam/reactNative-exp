@@ -15,7 +15,7 @@ const Search = () => {
   const [string, setString] = useState('');
   const [results, setResults] = useState([]);
 
-  const searchApi = async () => {
+  const apiS = async () => {
     const response = await yelp.get('/search?', {
       params: {
         limit: 50,
@@ -23,8 +23,9 @@ const Search = () => {
         location: 'delhi',
       },
     });
-    console.log('response');
-    setResults(response.data.businesses);
+ 
+    setResults(response.data.businesses)
+    
   };
   return (
     <View>
@@ -36,17 +37,7 @@ const Search = () => {
       />
       <Text> Searched :</Text>
       <Text> {results.length}</Text>
-      <Text
-        style={{
-          fontSize: 20,
-          fontWeight: '400',
-          position: 'absolute',
-          top: 55,
-          left: 100,
-          right: 10,
-        }}>
-        {string}
-      </Text>
+
     </View>
   );
 };
