@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import SearchB from '../reusableC/SearchB';
+import Yelp from '../api/yelp';
 
 const Search = () => {
   const [string, setString] = useState('');
