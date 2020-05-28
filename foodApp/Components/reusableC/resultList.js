@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     textS: {
         fontSize: 20,
         color: "black",
-        fontFamily: 'Iowan Old Style',
+        fontFamily: 'Didot-Bold',
         fontWeight: "bold",
         marginHorizontal: 10,
         marginBottom: 10
