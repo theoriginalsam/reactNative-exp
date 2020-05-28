@@ -52,7 +52,9 @@ const styles = StyleSheet.create({
     },
     rates: {
         fontSize: 10,
-        color: 'grey'
+        color: '#9b870c',
+
+
 
 
     },

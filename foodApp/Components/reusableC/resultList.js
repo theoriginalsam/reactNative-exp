@@ -3,6 +3,10 @@ import { StyleSheet, View, Text, FlatList, TouchableOpacity } from "react-native
 import ResultDetails from './ResultDetails'
 
 const resultList = ({ title, results, navigation }) => {
+
+    if (!results.length) {
+        return null
+    }
     return <View style={styles.viewS} >
 
         <Text style={styles.textS}>{title}</Text>

@@ -4,7 +4,7 @@ import yelp from '../api/yelp'
 
 const Tab = ({ navigation }) => {
 
-    const [results, setResults] = useState(null)
+    const [results, setResults] = useState([])
 
 
 
@@ -15,20 +15,24 @@ const Tab = ({ navigation }) => {
     const getResults = async (id) => {
         const response = await yelp.get(`/${id}`)
 
+
+
         setResults(response.data)
     }
 
     useEffect(() => {
-        getResults(id),
-            []
-    })
+        getResults(id)
+
+    }, [])
 
 
 
 
     return <View>
-        <Text>{id}</Text>
-    </View>;
+
+        <Text> Welcome to {results.name}</Text>
+
+    </View>
 };
 
 const styles = StyleSheet.create({});
