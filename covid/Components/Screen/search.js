@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import SearchB from '../reusableC/SearchB';
 const axios = require('axios');
+import CountryS from '../reusableC/CountryS'
 
 
 
@@ -16,9 +17,9 @@ const Search = () => {
 
     const [results, setResults] = useState([]);
 
-    console.log(results)
+    console.log(results.Countries[1].Country)
 
-    console.log(results)
+
     const searchApi = async () => {
 
 
@@ -38,14 +39,19 @@ const Search = () => {
 
     }, [])
 
+
+
     const searchCountry = (string) => {
 
-        return results.filter(results => {
-            return results.Countries.Country === string
-        })
+        for (i = 0; i < 200; i++) {
+            return results.filter(results => {
+                return results.Countries[i].Country === string
+            })
+        }
 
 
     }
+
 
 
 
@@ -59,10 +65,11 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={() => searchCountry()}
+                onTermSubmit={() => { searchApi() }}
             />
-            <Text>{results.length}</Text>
 
+            <Text>{results.length}</Text>
+            <CountryS title={string} results={searchCountry(title)} />
         </View>
     );
 };
