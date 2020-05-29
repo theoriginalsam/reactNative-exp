@@ -9,31 +9,24 @@ const axios = require('axios');
 const Search = () => {
     const [string, setString] = useState('');
 
-    axios.create({
-        baseURL: 'https://api.yelp.com/v3/businesses',
-        headers: {
-            Authorization:
-                'Bearer xv8YZp0XVFGmT2EhUDY2f0y0fgpDO73IcQ9sj3i-Cee9geaLmBb-byl1WyaToQsCNq56E8cUz77kUemrFmdCvRhN8GCflJfuULwV44dTe48KM8CD7MQtqiY9ZCjOXnYx',
-        },
+    const getResult = axios.create({
+        baseURL: 'https://api.covid19api.com',
     });
 
 
     const [results, setResults] = useState([]);
-    const searchApi = async string => {
+
+    console.log(results)
+
+    console.log(results)
+    const searchApi = async () => {
+
 
         try {
-            const response = await yelp.get('/search', {
-                params: {
-                    limit: 50,
-                    location: 'usa',
-                    term: string,
+            const response = await getResult.get('/summary');
 
 
-                },
-            });
-
-
-            setResults(response.data.businesses);
+            setResults(response.data);
 
         } catch (e) { console.log("Error") }
 
@@ -41,9 +34,21 @@ const Search = () => {
     };
     useEffect(() => {
 
-
+        searchApi()
 
     }, [])
+
+    const searchCountry = (string) => {
+
+        return results.filter(results => {
+            return results.Countries.Country === string
+        })
+
+
+    }
+
+
+
 
 
     return (
@@ -54,9 +59,9 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={() => searchApi(string)}
+                onTermSubmit={() => searchCountry()}
             />
-            <Text>{string}</Text>
+            <Text>{results.length}</Text>
 
         </View>
     );
