@@ -1,5 +1,5 @@
 {
-  "name": "firstApp",
+  "name": "covid",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,9 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
-    "gita": " git add . && git commit -m'commit via script' && git push origin master --force",
-    "gitc": "git add . && git commit -m'commit via script' "
+    "lint": "eslint ."
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -20,12 +18,13 @@
     "react-native-reanimated": "~1.4.0",
     "react-native-safe-area-context": "0.6.0",
     "react-native-screens": "2.0.0-alpha.12",
+    "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.3.9",
     "react-navigation-stack": "^2.5.1"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@babel/runtime": "7.9.6",
+    "@babel/core": "7.10.1",
+    "@babel/runtime": "7.10.1",
     "@react-native-community/eslint-config": "0.0.5",
     "babel-jest": "24.9.0",
     "eslint": "6.8.0",
