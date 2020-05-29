@@ -40,17 +40,14 @@ const Search = () => {
     }, [])
 
 
-
     const searchCountry = (string) => {
-
-        for (i = 0; i < 200; i++) {
-            return results.filter(results => {
-                return results.Countries[i].Country === string
-            })
-        }
-
+        results.filter(function (string) {
+            return results.Countries == 'Nepal';
+        })
 
     }
+
+
 
 
 
