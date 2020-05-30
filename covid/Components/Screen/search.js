@@ -4,7 +4,8 @@ import SearchB from '../reusableC/SearchB';
 const axios = require('axios');
 import CountryS from '../reusableC/CountryS'
 
-
+let Country, CountryC
+let i = 0
 
 
 const Search = () => {
@@ -50,19 +51,28 @@ const Search = () => {
 
 
 
+
     const searchApiC = (text) => {
 
         console.log("Running before")
         console.log(results)
+        console.log(text)
 
-        results = results.filter(function (item) {
-            return item.Countries.Country == text;
-        })
+        for (i = 0; i < 186; i++) {
+            if (results.Countries[i].Country == text) {
+                CountryC = i
+                console.log(CountryC)
+                return CountryC
+            }
+
+        }
 
 
 
 
     }
+
+
 
 
 
@@ -93,7 +103,7 @@ const Search = () => {
                 onTermSubmit={() => { searchApiC(string) }}
             />
 
-            <Text>{string}</Text>
+            <Text>{Country}</Text>
 
         </View>
     );
