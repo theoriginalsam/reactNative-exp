@@ -52,7 +52,7 @@ const Search = () => {
 
     const searchApiC = (text) => {
 
-        console.log("Running")
+        console.log("Running before")
         console.log(results)
 
         results = results.filter(function (item) {
