@@ -31,7 +31,7 @@ const Search = () => {
 
             setResults(response.data);
 
-        } catch (e) { console.log("Error") }
+        } catch (e) { console.log("R") }
 
 
     };
