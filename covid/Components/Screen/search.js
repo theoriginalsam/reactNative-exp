@@ -55,7 +55,7 @@ const Search = () => {
     const searchApiC = (text) => {
 
         console.log("Running before")
-        console.log(results)
+
         console.log(text)
 
         for (i = 0; i < 186; i++) {
@@ -65,12 +65,13 @@ const Search = () => {
                 return CountryC
             }
 
+
         }
-
-
-
-
     }
+
+
+
+
 
 
 
