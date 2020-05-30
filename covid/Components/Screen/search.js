@@ -17,7 +17,9 @@ const Search = () => {
 
     const [results, setResults] = useState([]);
 
-    console.log(results.Countries[1].Country)
+
+    console.log(results)
+
 
 
     const searchApi = async () => {
@@ -39,13 +41,16 @@ const Search = () => {
 
     }, [])
 
+    showForCountry = (string) => {
 
-    const searchCountry = (string) => {
-        results.filter(function (string) {
-            return results.Countries == 'Nepal';
-        })
+        results = results.filter(results => results.Global)
+
 
     }
+
+
+
+
 
 
 
@@ -65,8 +70,8 @@ const Search = () => {
                 onTermSubmit={() => { searchApi() }}
             />
 
-            <Text>{results.length}</Text>
-            <CountryS title={string} results={searchCountry(title)} />
+            <Text>{results.NewConfirmed}</Text>
+
         </View>
     );
 };
