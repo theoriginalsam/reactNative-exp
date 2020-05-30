@@ -18,8 +18,8 @@ const Search = () => {
     const [results, setResults] = useState([]);
 
 
-    console.log(results)
 
+    console.log(results)
 
 
     const searchApi = async () => {
@@ -29,24 +29,41 @@ const Search = () => {
             const response = await getResult.get('/summary');
 
 
-            setResults(response.data);
+            setResults(response.data.Global);
+
+
+
 
         } catch (e) { console.log("R") }
 
 
     };
+
+
+
+
     useEffect(() => {
 
         searchApi()
 
     }, [])
 
-    showForCountry = (string) => {
 
-        results = results.filter(results => results.Global)
+
+    const searchApiC = (srting) => {
+
+        console.log("Running")
+
+        console.log(results)
 
 
     }
+
+
+
+
+
+
 
 
 
@@ -67,10 +84,10 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={() => { searchApi() }}
+                onTermSubmit={() => { searchApiC(string) }}
             />
 
-            <Text>{results.NewConfirmed}</Text>
+            <Text>{string}</Text>
 
         </View>
     );
