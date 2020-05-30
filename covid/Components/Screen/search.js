@@ -29,12 +29,12 @@ const Search = () => {
             const response = await getResult.get('/summary');
 
 
-            setResults(response.data.Global);
+            setResults(response.data);
 
 
 
 
-        } catch (e) { console.log("R") }
+        } catch (e) { console.log("Error") }
 
 
     };
@@ -50,14 +50,20 @@ const Search = () => {
 
 
 
-    const searchApiC = (srting) => {
+    const searchApiC = (text) => {
 
         console.log("Running")
-
         console.log(results)
+
+        results = results.filter(function (item) {
+            return item.Countries.Country == text;
+        })
+
+
 
 
     }
+
 
 
 
