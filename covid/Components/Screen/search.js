@@ -101,7 +101,7 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={searchApiC(string)}
+                onTermSubmit={() => searchApiC(string)}
             />
 
             <Text>{CountryC}</Text>
