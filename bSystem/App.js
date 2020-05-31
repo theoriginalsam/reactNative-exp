@@ -1,4 +1,5 @@
 import { createAppContainer } from 'react-navigation';
+import React from 'react'
 import { createStackNavigator } from 'react-navigation-stack';
 import Index from './src/Screen/indexScreen';
 
@@ -18,4 +19,9 @@ const navigator = createStackNavigator(
   },
 );
 
-export default createAppContainer(navigator);
+const APP = createAppContainer(navigator);
+
+
+export default () => {
+  return <APP />
+}
