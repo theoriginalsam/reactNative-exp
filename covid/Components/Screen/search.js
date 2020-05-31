@@ -78,28 +78,6 @@ const Search = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <View>
 
@@ -109,11 +87,19 @@ const Search = () => {
                 string={string}
                 onTermChange={newString => setString(newString)}
                 onTermSubmit={CountryC => searchApiC(string)}
+
+
             />
 
 
 
-            <CountryS title={string} results={results} countryR={searchApiC(string)} />
+            {CountryC != 0 && <CountryS title={string} code={CountryC} />}
+
+
+
+
+
+
 
         </View>
     );
