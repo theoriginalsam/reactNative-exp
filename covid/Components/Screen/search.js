@@ -9,6 +9,7 @@ let i = 0
 
 
 const Search = () => {
+
     const [string, setString] = useState('');
 
     const getResult = axios.create({
@@ -36,6 +37,8 @@ const Search = () => {
 
 
         } catch (e) { console.log("Error") }
+
+
 
 
     };
@@ -93,6 +96,10 @@ const Search = () => {
 
 
 
+
+
+
+
     return (
         <View>
 
@@ -101,10 +108,12 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={() => searchApiC(string)}
+                onTermSubmit={CountryC => searchApiC(string)}
             />
 
-            <Text>{CountryC}</Text>
+
+
+            <CountryS title={string} results={results} countryR={searchApiC(string)} />
 
         </View>
     );

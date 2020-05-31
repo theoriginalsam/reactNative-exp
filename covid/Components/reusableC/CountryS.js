@@ -1,9 +1,14 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-const CountryS = (title, results) => {
+const CountryS = (title, results, countryR) => {
+    if (!countryR.length) {
+        return null
+    }
+
     return <View>
-        <Text>{results.length}</Text>
+        <Text>{results.Global.NewConfirmed}</Text>
+
     </View>;
 };
 
