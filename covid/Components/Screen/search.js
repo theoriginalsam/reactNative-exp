@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
 import SearchB from '../reusableC/SearchB';
 const axios = require('axios');
 import CountryS from '../reusableC/CountryS'
@@ -55,22 +55,22 @@ const Search = () => {
 
 
 
-    const searchApiC = (text) => {
+    // const searchApiC = (text) => {
 
-        console.log("Running before")
+    //     console.log("Running before")
 
-        console.log(text)
+    //     console.log(text)
 
-        for (i = 0; i < 186; i++) {
-            if (results.Countries[i].Country == text) {
-                CountryC = i
-                console.log(CountryC)
-                return CountryC
-            }
+    //     for (i = 0; i < 186; i++) {
+    //         if (results.Countries[i].Country == text) {
+    //             CountryC = i
+    //             console.log(CountryC)
+    //             return CountryC
+    //         }
 
 
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -86,15 +86,21 @@ const Search = () => {
                 style={styles.fontS}
                 string={string}
                 onTermChange={newString => setString(newString)}
-                onTermSubmit={CountryC => searchApiC(string)}
+                onTermSubmit={() => searchApi()}
 
 
             />
 
 
+            <FlatList
+                data={results}
+                keyExtractor={results => results.Countries.slug}
+                renderItem={({ item }) => {
+                    return <Text>{item.Global.NewConfirmed}</Text>
 
-            {CountryC != 0 && <CountryS title={string} code={CountryC} />}
+                }}
 
+            />
 
 
 
