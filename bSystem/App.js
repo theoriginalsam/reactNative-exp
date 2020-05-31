@@ -19,9 +19,9 @@ const navigator = createStackNavigator(
   },
 );
 
-const APPl = createAppContainer(navigator);
+const APP = createAppContainer(navigator);
 
 
 export default () => {
-  return <APPl />
+  return <APP />
 }
