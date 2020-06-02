@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     borderTopWidth: 1,
 
-    margin: 10,
+    margin: 5,
   },
   title: {
     fontSize: 20,
