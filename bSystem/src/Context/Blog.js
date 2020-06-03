@@ -17,7 +17,6 @@ const blogReducer = (state, action) => {
       return [
         ...state,
         {
-          id: id,
           title: action.payload.title,
           body: action.payload.body,
         },
@@ -38,8 +37,8 @@ export const BlogProvider = ({children}) => {
   const deleteBlog = id => {
     dispatch({type: 'delete_blog', payload: id});
   };
-  const editBlog = (id, title, body) => {
-    dispatch({type: 'edit_blog', payload: {id, title, body}});
+  const editBlog = (title, body) => {
+    dispatch({type: 'edit_blog', payload: {title, body}});
   };
 
   return (

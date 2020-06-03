@@ -2,13 +2,14 @@ import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
 import BlogProvider from '../Context/Blog';
 const Edit = ({navigation}) => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-
   const {data, editBlog} = useContext(BlogProvider);
 
   console.log(data);
-  console.log(navigation.getParam('id'));
+  const id = navigation.getParam('id');
+
+  const dataTOedit = data.find(dataTOedit => dataTOedit.id === id);
+  const [title, setTitle] = useState(dataTOedit.title);
+  const [body, setBody] = useState(dataTOedit.body);
 
   return (
     <View>
@@ -33,7 +34,7 @@ const Edit = ({navigation}) => {
       <Button
         title="Add"
         onPress={() => {
-          editBlog(id, title, body);
+          editBlog(title, body);
           navigation.navigate('Index');
         }}
       />

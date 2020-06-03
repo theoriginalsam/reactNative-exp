@@ -7,6 +7,7 @@ const blogScreen = ({navigation}) => {
   const {data} = useContext(BlogProvider);
 
   const id = navigation.getParam('id');
+  console.log(id);
 
   const blogPost = data.find(blogPost => blogPost.id === id);
 
@@ -23,7 +24,7 @@ blogScreen.navigationOptions = ({navigation}) => {
     headerRight: () => (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Edit');
+          navigation.navigate('Edit', {id: navigation.getParam('id')});
         }}>
         <Icon name="plus" size={30} />
       </TouchableOpacity>
