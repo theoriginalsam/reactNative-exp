@@ -37,6 +37,11 @@ const indexScreen = ({navigation}) => {
     </View>
   );
 };
+indexScreen.navigationOptions = () => {
+  return {
+    headerRight: <Icon name="plus" size={30} />,
+  };
+};
 
 const styles = StyleSheet.create({
   row: {
