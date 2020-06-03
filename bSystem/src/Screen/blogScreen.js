@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import BlogProvider from '../Context/Blog';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const blogScreen = ({navigation}) => {
   const {data} = useContext(BlogProvider);
@@ -15,6 +16,19 @@ const blogScreen = ({navigation}) => {
       <Text>{blogPost.body}</Text>
     </View>
   );
+};
+
+blogScreen.navigationOptions = ({navigation}) => {
+  return {
+    headerRight: () => (
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Edit');
+        }}>
+        <Icon name="plus" size={30} />
+      </TouchableOpacity>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({});

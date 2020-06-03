@@ -1,11 +1,15 @@
 import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
 import BlogProvider from '../Context/Blog';
-const Create = ({navigation}) => {
+const Edit = ({navigation}) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
-  const {addBlog} = useContext(BlogProvider);
+  const {data, editBlog} = useContext(BlogProvider);
+
+  console.log(data);
+  console.log(navigation.getParam('id'));
+
   return (
     <View>
       <Text style={styles.header}>Title</Text>
@@ -29,7 +33,7 @@ const Create = ({navigation}) => {
       <Button
         title="Add"
         onPress={() => {
-          addBlog(title, body);
+          editBlog(id, title, body);
           navigation.navigate('Index');
         }}
       />
@@ -49,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Create;
+export default Edit;
