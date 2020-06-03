@@ -15,7 +15,7 @@ const navigator = createStackNavigator(
   },
 
   {
-    initialRouteName: 'Create',
+    initialRouteName: 'Index',
     defaultNavigationOptions: {
       title: 'BLOG',
     },

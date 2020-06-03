@@ -12,6 +12,7 @@ const blogScreen = ({navigation}) => {
   return (
     <View>
       <Text>{blogPost.title}</Text>
+      <Text>{blogPost.body}</Text>
     </View>
   );
 };

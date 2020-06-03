@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
-
+import BlogProvider from '../Context/Blog';
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+
+  const {addBlog} = useContext(BlogProvider);
   return (
     <View>
       <Text style={styles.header}>Title</Text>
@@ -20,11 +22,11 @@ const Create = () => {
         style={styles.input}
         value={body}
         onChangeText={text => {
-          setTitle(text);
+          setBody(text);
         }}
         placeholder="Enter the Content here"
       />
-      <Button title="Add" />
+      <Button title="Add" onPress={() => addBlog(title, body)} />
     </View>
   );
 };
