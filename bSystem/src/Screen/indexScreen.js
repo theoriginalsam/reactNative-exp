@@ -37,9 +37,16 @@ const indexScreen = ({navigation}) => {
     </View>
   );
 };
-indexScreen.navigationOptions = () => {
+indexScreen.navigationOptions = ({navigation}) => {
   return {
-    headerRight: () => <Icon name="plus" size={30} />,
+    headerRight: () => (
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Create');
+        }}>
+        <Icon name="plus" size={30} />
+      </TouchableOpacity>
+    ),
   };
 };
 

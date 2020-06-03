@@ -5,11 +5,13 @@ import Index from './src/Screen/indexScreen';
 
 import {BlogProvider} from './src/Context/Blog';
 import blogScreeen from './src/Screen/blogScreen';
+import Create from './src/Screen/Create';
 
 const navigator = createStackNavigator(
   {
     Index: Index,
     Blog: blogScreeen,
+    Create: Create,
   },
 
   {
