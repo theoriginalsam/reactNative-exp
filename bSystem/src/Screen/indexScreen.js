@@ -39,7 +39,7 @@ const indexScreen = ({navigation}) => {
 };
 indexScreen.navigationOptions = () => {
   return {
-    headerRight: <Icon name="plus" size={30} />,
+    headerRight: () => <Icon name="plus" size={30} />,
   };
 };
 
