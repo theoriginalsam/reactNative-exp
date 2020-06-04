@@ -14,13 +14,12 @@ const blogReducer = (state, action) => {
         },
       ];
     case 'edit_blog':
-      return [
-        ...state,
-        {
-          title: action.payload.title,
-          body: action.payload.body,
-        },
-      ];
+      return state.map(blogPost => {
+        if (blogPost.id === action.payload.id) return action.payload;
+        else {
+          return blogPost;
+        }
+      });
     case 'delete_blog':
       return state.filter(state => state.id !== action.payload);
     default:
@@ -37,8 +36,8 @@ export const BlogProvider = ({children}) => {
   const deleteBlog = id => {
     dispatch({type: 'delete_blog', payload: id});
   };
-  const editBlog = (title, body) => {
-    dispatch({type: 'edit_blog', payload: {title, body}});
+  const editBlog = (id, title, body) => {
+    dispatch({type: 'edit_blog', payload: {id, title, body}});
   };
 
   return (

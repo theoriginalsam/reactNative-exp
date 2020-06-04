@@ -32,7 +32,7 @@ const Edit = ({navigation}) => {
         placeholder="Enter the Content here"
       />
       <Button
-        title="Add"
+        title="EDIT"
         onPress={() => {
           editBlog(id, title, body);
           navigation.navigate('Index');
