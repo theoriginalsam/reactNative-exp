@@ -29,7 +29,7 @@ const Edit = ({navigation}) => {
         onChangeText={text => {
           setBody(text);
         }}
-        placeholder="Enter the Content here"
+        placeholder="Enter the Content "
       />
       <Button
         title="EDIT"
