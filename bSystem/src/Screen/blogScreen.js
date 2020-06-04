@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   content: {
     margin: 20,
-    backgroundColor: '#e8e4e1',
+    backgroundColor: '#e8e4e2',
     padding: 20,
     fontSize: 20,
     justifyContent: 'center',
