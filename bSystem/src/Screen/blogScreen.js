@@ -43,25 +43,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 40,
     fontSize: 50,
+    fontWeight: 'bold',
     justifyContent: 'center',
     textAlign: 'center',
   },
   content: {
     margin: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#e8e4e1',
     padding: 20,
     fontSize: 20,
     justifyContent: 'center',
     textAlign: 'center',
     color: 'red',
-    borderRadius: 10,
-    shadowColor: '#000000',
-    shadowOpacity: 0.8,
-    shadowRadius: 20,
-    shadowOffset: {
-      height: 10,
-      width: 10,
-    },
+    borderRadius: 11,
   },
 });
 
