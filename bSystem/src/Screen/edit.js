@@ -34,7 +34,7 @@ const Edit = ({navigation}) => {
       <Button
         title="Add"
         onPress={() => {
-          editBlog(title, body);
+          editBlog(id, title, body);
           navigation.navigate('Index');
         }}
       />
