@@ -3,7 +3,9 @@ import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
 import BlogProvider from '../Context/Blog';
 const Create = ({navigation}) => {
   const [title, setTitle] = useState('SAM');
-  const [body, setBody] = useState('MSA');
+  const [body, setBody] = useState(
+    'CLI is a command line program that accepts text input to execute operating system functions. ... In the 1970s an 1980s, command line input was commonly used by Unix systems and PC systems like MS-DOS and Apple DOS. Today, with graphical user interfaces (GUI), most users never use command-line interfaces (CLI).',
+  );
 
   const {addBlog} = useContext(BlogProvider);
   return (

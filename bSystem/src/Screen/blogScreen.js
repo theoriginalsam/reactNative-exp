@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import BlogProvider from '../Context/Blog';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {BoxShadow} from 'react-native-shadow';
 
 const blogScreen = ({navigation}) => {
   const {data} = useContext(BlogProvider);
@@ -14,7 +15,8 @@ const blogScreen = ({navigation}) => {
   return (
     <View style={styles.body}>
       <Text style={styles.title}>{blogPost.title}</Text>
-      <Text>{blogPost.body}</Text>
+
+      <Text style={styles.content}>{blogPost.body}</Text>
     </View>
   );
 };
@@ -34,12 +36,32 @@ blogScreen.navigationOptions = ({navigation}) => {
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     flex: 1,
   },
   title: {
     backgroundColor: 'white',
-    padding: 100,
+    padding: 40,
+    fontSize: 50,
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
+  content: {
+    margin: 20,
+    backgroundColor: 'white',
+    padding: 20,
+    fontSize: 20,
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: 'red',
+    borderRadius: 10,
+    shadowColor: '#000000',
+    shadowOpacity: 0.8,
+    shadowRadius: 20,
+    shadowOffset: {
+      height: 10,
+      width: 10,
+    },
   },
 });
 
