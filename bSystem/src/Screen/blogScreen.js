@@ -12,8 +12,8 @@ const blogScreen = ({navigation}) => {
   const blogPost = data.find(blogPost => blogPost.id === id);
 
   return (
-    <View>
-      <Text>{blogPost.title}</Text>
+    <View style={styles.body}>
+      <Text style={styles.title}>{blogPost.title}</Text>
       <Text>{blogPost.body}</Text>
     </View>
   );
@@ -32,6 +32,15 @@ blogScreen.navigationOptions = ({navigation}) => {
   };
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  body: {
+    backgroundColor: 'grey',
+    flex: 1,
+  },
+  title: {
+    backgroundColor: 'white',
+    padding: 100,
+  },
+});
 
 export default blogScreen;

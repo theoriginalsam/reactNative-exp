@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import BlogContext from '../Context/Blog';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Feather';
 
 const indexScreen = ({navigation}) => {
   const {data, addBlog, deleteBlog} = useContext(BlogContext);

@@ -2,13 +2,13 @@ import React, {useContext, useState} from 'react';
 import {StyleSheet, View, Text, TextInput, Button} from 'react-native';
 import BlogProvider from '../Context/Blog';
 const Create = ({navigation}) => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState('SAM');
+  const [body, setBody] = useState('MSA');
 
   const {addBlog} = useContext(BlogProvider);
   return (
     <View>
-      <Text style={styles.header}>Title</Text>
+      <Text style={styles.header}>Task</Text>
       <TextInput
         style={styles.input}
         value={title}
@@ -17,9 +17,9 @@ const Create = ({navigation}) => {
         }}
         placeholder="Enter the title here"
       />
-      <Text style={styles.header}>Body</Text>
+      <Text style={styles.header}>Description</Text>
       <TextInput
-        style={styles.input}
+        style={styles.inputD}
         value={body}
         onChangeText={text => {
           setBody(text);
@@ -40,6 +40,12 @@ const Create = ({navigation}) => {
 const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
+    borderColor: 'black',
+    marginBottom: 10,
+  },
+  inputD: {
+    borderWidth: 1,
+    paddingBottom: 100,
     borderColor: 'black',
     marginBottom: 10,
   },
