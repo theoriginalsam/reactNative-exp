@@ -1,10 +1,22 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Button} from 'react-native';
 
-const Signup = () => {
+const SignUp = ({navigation}) => {
   return (
     <View>
       <Text>SignUp</Text>
+      <Button
+        title="or SignIN"
+        onPress={() => {
+          navigation.navigate('SignUP');
+        }}
+      />
+      <Button
+        title="or Main"
+        onPress={() => {
+          navigation.navigate('bottomFlow');
+        }}
+      />
     </View>
   );
 };
