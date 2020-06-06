@@ -47,7 +47,7 @@ const App: () => React$Node = () => {
               </Text>
             </View>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See You Ches</Text>
+              <Text style={styles.sectionTitle}>See Ches</Text>
               <Text style={styles.sectionDescription}>
                 <ReloadInstructions />
               </Text>
