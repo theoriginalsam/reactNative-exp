@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Text, Input, Badge, Button} from 'react-native-elements';
 import {StyleSheet, View} from 'react-native';
+import {Context} from '../Context/authContext';
 
 const SignUp = ({navigation}) => {
+  const {state, signup} = useContext(Context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
@@ -20,7 +22,7 @@ const SignUp = ({navigation}) => {
       <Button
         title="Sign UP"
         onPress={() => {
-          navigation.navigate('bottomFlow');
+          signup({email, password});
         }}
       />
 

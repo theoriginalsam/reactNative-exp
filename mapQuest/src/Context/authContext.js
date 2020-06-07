@@ -1,5 +1,6 @@
 import createDataContext from './createDataContext';
 import tracerApi from '../api/tracker';
+import Axios from 'axios';
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -10,7 +11,15 @@ const authReducer = (state, action) => {
 
 const signup = dispatch => {
   return ({email, password}) => {
-    //api req
+      try{
+
+        const response = await tracerApi.post('/signup',{email,password})
+        console.log(response)
+
+      }catch(err){
+          console.log(err)
+      }
+
   };
 };
 
