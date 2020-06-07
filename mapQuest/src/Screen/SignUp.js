@@ -18,6 +18,7 @@ const SignUp = ({navigation}) => {
         onChangeText={setPassword}
         placeholder=" Password"
       />
+      {state.errorMes ? <Text>{state.errorMes}</Text> : null}
 
       <Button
         title="Sign UP"

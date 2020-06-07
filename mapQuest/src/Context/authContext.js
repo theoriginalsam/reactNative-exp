@@ -4,22 +4,21 @@ import Axios from 'axios';
 
 const authReducer = (state, action) => {
   switch (action.type) {
+    case 'error_add':
+      return {...state, errorMes: action.payload};
     default:
       return state;
   }
 };
 
 const signup = dispatch => {
-  return ({email, password}) => {
-      try{
-
-        const response = await tracerApi.post('/signup',{email,password})
-        console.log(response)
-
-      }catch(err){
-          console.log(err)
-      }
-
+  return async ({email, password}) => {
+    try {
+      const response = await tracerApi.post('/signup', {email, password});
+      console.log(response.data);
+    } catch (err) {
+      dispatch({type: 'error_add', payload: 'Erro sign up'});
+    }
   };
 };
 
