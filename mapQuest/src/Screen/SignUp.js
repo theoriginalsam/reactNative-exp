@@ -4,12 +4,18 @@ import {StyleSheet, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 
 const SignUp = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <View>
       <Text h1>SignUp</Text>
       <Badge status="success" />
-      <Input placeholder=" Email" />
-      <Input placeholder=" Password" />
+      <Input value={email} onChangeText={setEmail} placeholder=" Email" />
+      <Input
+        value={password}
+        onChangeText={setPassword}
+        placeholder=" Password"
+      />
 
       <Button
         title="Sign UP"
