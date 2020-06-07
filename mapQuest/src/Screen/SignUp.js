@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, Input, Badge, Button} from 'react-native-elements';
 import {StyleSheet, View} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
 
 const SignUp = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -12,6 +11,7 @@ const SignUp = ({navigation}) => {
       <Badge status="success" />
       <Input value={email} onChangeText={setEmail} placeholder=" Email" />
       <Input
+        secureTextEntry
         value={password}
         onChangeText={setPassword}
         placeholder=" Password"
