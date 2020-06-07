@@ -10,7 +10,7 @@ const authReducer = (state, action) => {
       return {...state, errorMes: action.payload};
 
     case 'add_user':
-      return {errorMes: , token: action.token};
+      return {errorMes: '', token: action.token};
     default:
       return state;
   }
