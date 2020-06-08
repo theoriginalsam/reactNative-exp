@@ -18,7 +18,7 @@ const Signin = ({navigation}) => {
         secureTextEntry
         value={password}
         onChangeText={setPassword}
-        placeholder=" Password"
+        placeholder="Password"
       />
       {state.errorMes ? <Text>{state.errorMes}</Text> : null}
 
