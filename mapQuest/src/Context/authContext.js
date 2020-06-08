@@ -1,7 +1,8 @@
 import createDataContext from './createDataContext';
 import tracerApi from '../api/tracker';
 
-import AsyncStorage from '@react-native-community/async-storage';
+//import AsyncStorage from '@react-native-community/async-storage';
+import {AsyncStorage} from 'react-native';
 import {navigate} from '../navigationRef';
 
 const authReducer = (state, action) => {
@@ -55,14 +56,6 @@ const signin = dispatch => {
   };
 };
 
-const signout = dispatch => {
-  return async () => {
-    await AsyncStorage.removeItem('token');
-    dispatch({type: 'log_out'});
-    navigate('Signin');
-  };
-};
-
 const trySignIn = dispatch => async () => {
   const token = AsyncStorage.getItem('token');
   console.log(token);
@@ -74,6 +67,12 @@ const trySignIn = dispatch => async () => {
   } else {
     navigate('Signin');
   }
+};
+
+const signout = dispatch => async () => {
+  await AsyncStorage.removeItem('token');
+  dispatch({type: 'log_out'});
+  navigate('loginFlow');
 };
 
 export const {Provider, Context} = createDataContext(
