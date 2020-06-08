@@ -4,12 +4,15 @@ import {StyleSheet, View} from 'react-native';
 import {Context} from '../Context/authContext';
 
 const SignUp = ({navigation}) => {
+  const {state, signup, trySignIn} = useContext(Context);
+  const [email, setEmail] = useState('');
+
+  const [password, setPassword] = useState('');
+
   useEffect(() => {
     trySignIn();
   }, []);
-  const {state, signup, trySignIn} = useContext(Context);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
   return (
     <View>
       <Text h1>SignUp</Text>
@@ -34,7 +37,7 @@ const SignUp = ({navigation}) => {
         title="or Signin"
         type="clear"
         onPress={() => {
-          navigation.navigate('SignUP');
+          navigation.navigate('Signin');
         }}
       />
     </View>

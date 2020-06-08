@@ -13,7 +13,10 @@ const authReducer = (state, action) => {
       return {errorMes: '', token: action.token};
 
     case 'clear_msg':
-      return {...state, errorMes: 'Fuck'};
+      return {...state, errorMes: ''};
+    case 'log_out':
+      return {token: null, errorMes: ''};
+
     default:
       return state;
   }
@@ -42,31 +45,39 @@ const signin = dispatch => {
       const response = await tracerApi.post('/signin', {email, password});
 
       await AsyncStorage.setItem('token', response.data.token);
-      dispatch({type: 'enter_user', token: response.data.token});
+      dispatch({type: 'add_user', token: response.data.token});
       navigate('TrackScreen');
+      console.log('SignedIN');
+      console.log(response.data.token);
     } catch (err) {
       dispatch({type: 'error_add', payload: 'Erro sign in'});
     }
   };
 };
 
-const trySignIn = dispatch => async () => {
-  const token = AsyncStorage.getItem('token');
-  if (token) {
-    dispatch({type: 'enter_user', payload: token});
-
-    navigate('TrackScreen');
-  }
+const signout = dispatch => {
+  return async () => {
+    await AsyncStorage.removeItem('token');
+    dispatch({type: 'log_out'});
+    navigate('Signin');
+  };
 };
 
-const signout = dispatch => {
-  return () => {
-    //out change state
-  };
+const trySignIn = dispatch => async () => {
+  const token = AsyncStorage.getItem('token');
+  console.log(token);
+
+  if (token) {
+    dispatch({type: 'add_user', payload: token});
+
+    navigate('TrackScreen');
+  } else {
+    navigate('Signin');
+  }
 };
 
 export const {Provider, Context} = createDataContext(
   authReducer,
   {signin, signup, signout, clearMsg, trySignIn},
-  {isSignedIn: false},
+  {token: null, errorMes: ''},
 );

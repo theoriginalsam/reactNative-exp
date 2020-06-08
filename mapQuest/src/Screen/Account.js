@@ -1,16 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
+import {Context} from '../Context/authContext';
 
 const Account = ({navigation}) => {
+  const {signout} = useContext(Context);
   return (
     <View>
       <Text>Account</Text>
-      <Button
-        title="LogOut"
-        onPress={() => {
-          navigation.navigate('SignUP');
-        }}
-      />
+      <Button title="LogOut" onPress={signout} />
     </View>
   );
 };
