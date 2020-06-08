@@ -70,7 +70,6 @@ const trySignIn = dispatch => async () => {
 };
 
 const signout = dispatch => async () => {
-  await AsyncStorage.removeItem('token');
   dispatch({type: 'log_out'});
   navigate('loginFlow');
 };

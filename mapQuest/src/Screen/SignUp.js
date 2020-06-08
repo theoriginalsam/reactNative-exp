@@ -9,10 +9,6 @@ const SignUp = ({navigation}) => {
 
   const [password, setPassword] = useState('');
 
-  useEffect(() => {
-    trySignIn();
-  }, []);
-
   return (
     <View>
       <Text h1>SignUp</Text>
