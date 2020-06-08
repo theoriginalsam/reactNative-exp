@@ -46,10 +46,9 @@ const signin = dispatch => {
   };
 };
 
-const clearMsg = dispatch => {
-  return () => {
-    dispatch({type: 'clear_msg'});
-  };
+const clearMsg = dispatch => () => {
+  console.log('Rins');
+  dispatch({type: 'clear_msg'});
 };
 
 const signout = dispatch => {
