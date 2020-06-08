@@ -1,7 +1,7 @@
 import createDataContext from './createDataContext';
 import tracerApi from '../api/tracker';
 
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {navigate} from '../navigationRef';
 
 const authReducer = (state, action) => {
