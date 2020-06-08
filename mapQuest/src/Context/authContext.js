@@ -13,10 +13,14 @@ const authReducer = (state, action) => {
       return {errorMes: '', token: action.token};
 
     case 'clear_msg':
-      return {...state, errorMes: ''};
+      return {...state, errorMes: 'Fuck'};
     default:
       return state;
   }
+};
+const clearMsg = dispatch => () => {
+  console.log('Rins');
+  dispatch({type: 'clear_msg'});
 };
 
 const signup = dispatch => {
@@ -46,9 +50,13 @@ const signin = dispatch => {
   };
 };
 
-const clearMsg = dispatch => () => {
-  console.log('Rins');
-  dispatch({type: 'clear_msg'});
+const trySignIn = dispatch => async () => {
+  const token = AsyncStorage.getItem('token');
+  if (token) {
+    dispatch({type: 'enter_user', payload: token});
+
+    navigate('TrackScreen');
+  }
 };
 
 const signout = dispatch => {
@@ -59,6 +67,6 @@ const signout = dispatch => {
 
 export const {Provider, Context} = createDataContext(
   authReducer,
-  {signin, signup, signout, clearMsg},
+  {signin, signup, signout, clearMsg, trySignIn},
   {isSignedIn: false},
 );

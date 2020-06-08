@@ -1,10 +1,13 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Text, Input, Badge, Button} from 'react-native-elements';
 import {StyleSheet, View} from 'react-native';
 import {Context} from '../Context/authContext';
 
 const SignUp = ({navigation}) => {
-  const {state, signup} = useContext(Context);
+  useEffect(() => {
+    trySignIn();
+  }, []);
+  const {state, signup, trySignIn} = useContext(Context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (

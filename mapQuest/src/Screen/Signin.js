@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Text, Input, Badge, Button} from 'react-native-elements';
 import {StyleSheet, View} from 'react-native';
 import {Context} from '../Context/authContext';
@@ -8,6 +8,7 @@ const Signin = ({navigation}) => {
   const {state, signin, clearMsg} = useContext(Context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   return (
     <View>
       <NavigationEvents onWillBlur={clearMsg} />
