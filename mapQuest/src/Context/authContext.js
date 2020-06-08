@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext';
 import tracerApi from '../api/tracker';
-import Axios from 'axios';
+
 import {AsyncStorage} from 'react-native';
 import {navigate} from '../navigationRef';
 
@@ -11,6 +11,9 @@ const authReducer = (state, action) => {
 
     case 'add_user':
       return {errorMes: '', token: action.token};
+
+    case 'clear_msg':
+      return {...state, errorMes: ''};
     default:
       return state;
   }
@@ -30,8 +33,22 @@ const signup = dispatch => {
 };
 
 const signin = dispatch => {
-  return ({email, password}) => {
-    //api post req
+  return async ({email, password}) => {
+    try {
+      const response = await tracerApi.post('/signin', {email, password});
+
+      await AsyncStorage.setItem('token', response.data.token);
+      dispatch({type: 'enter_user', token: response.data.token});
+      navigate('TrackScreen');
+    } catch (err) {
+      dispatch({type: 'error_add', payload: 'Erro sign in'});
+    }
+  };
+};
+
+const clearMsg = dispatch => {
+  return () => {
+    dispatch({type: 'clear_msg'});
   };
 };
 
@@ -43,6 +60,6 @@ const signout = dispatch => {
 
 export const {Provider, Context} = createDataContext(
   authReducer,
-  {signin, signup, signout},
+  {signin, signup, signout, clearMsg},
   {isSignedIn: false},
 );

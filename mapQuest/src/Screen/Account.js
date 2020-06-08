@@ -8,7 +8,7 @@ const Account = ({navigation}) => {
       <Button
         title="LogOut"
         onPress={() => {
-          navigation.navigate('Signin');
+          navigation.navigate('SignUP');
         }}
       />
     </View>
