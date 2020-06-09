@@ -71,6 +71,7 @@ const trySignIn = dispatch => async () => {
 
 const signout = dispatch => async () => {
   dispatch({type: 'log_out'});
+  AsyncStorage.removeItem('token');
   navigate('loginFlow');
 };
 

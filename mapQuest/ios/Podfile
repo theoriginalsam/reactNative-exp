@@ -79,6 +79,8 @@ target 'mapQuest' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'mapQuestTests' do
     inherit! :complete
     # Pods for testing
