@@ -1,10 +1,14 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import {Text, Input} from 'react-native-elements';
+import {SafeAreaView} from 'react-navigation';
+import Map from '../Component/map';
 
 const TrackCreate = () => {
   return (
     <View>
-      <Text>Track Create</Text>
+      <Text h1>Track Create</Text>
+      <Map />
     </View>
   );
 };
