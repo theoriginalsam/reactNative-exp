@@ -20,9 +20,14 @@ const TrackCreate = () => {
     <View>
       <Text h1>Track Create</Text>
       <Map />
+      {err ? <Text>Enable Location</Text> : null}
     </View>
   );
 };
+
+useEffect(() => {
+  startTrack();
+}, []);
 
 const styles = StyleSheet.create({});
 
