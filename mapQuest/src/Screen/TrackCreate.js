@@ -10,7 +10,9 @@ import Map from '../Component/map';
 const TrackCreate = () => {
   const [err, setErr] = useState(null);
 
-  const startTrack = async () => {};
+  const startTrack = async () => {
+    // some code for expo authorization
+  };
 
   useEffect(() => {
     startTrack();
@@ -20,7 +22,7 @@ const TrackCreate = () => {
     <View>
       <Text h1>Track Create</Text>
       <Map />
-      {err ? <Text>Enable Location</Text> : null}
+      {err ? <Text>Please enable the location</Text> : null}
     </View>
   );
 };
