@@ -16,6 +16,7 @@
     "bcrypt": "^4.0.1",
     "expo": "^37.0.12",
     "expo-location": "~8.1.0",
+    "expo-permissions": "^8.1.0",
     "express": "^4.17.1",
     "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
