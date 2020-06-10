@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, Permission} from 'react-native';
-import {PermissionsAndroid} from 'react-native';
+
 import {Text, Input} from 'react-native-elements';
-import {SafeAreaView} from 'react-navigation';
+
 import {requestPermissionsAsync} from 'expo-location';
+import {Location, Permission} from 'expo';
 
 import Map from '../Component/map';
 
@@ -11,7 +12,12 @@ const TrackCreate = () => {
   const [err, setErr] = useState(null);
 
   const startTrack = async () => {
-    // some code for expo authorization
+    const {status} = await Permissions.askAsync(Permissions.Location);
+    if (status !== 'granted') {
+      console.log('Not enabled');
+    } else {
+      console.log('graneted');
+    }
   };
 
   useEffect(() => {
