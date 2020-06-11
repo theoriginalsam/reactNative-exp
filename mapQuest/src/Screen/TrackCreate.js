@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import '../_mockLocation';
 import {StyleSheet, View} from 'react-native';
 
 import {Text, Input} from 'react-native-elements';
+
+import {watchPositionAsync, Accuracy} from 'expo-location';
+
+import * as Permissions from 'expo-permissions';
 
 import {PermissionsAndroid} from 'react-native';
 
@@ -20,14 +25,23 @@ const TrackCreate = () => {
         },
       );
       console.log(granted);
-      console.log(PermissionsAndroid.RESULTS.GRANTED);
-      if (granted === 'never_ask_again') {
+      if (granted === 'granted') {
         console.log('You can use the location');
-        alert('You can use the location');
       } else {
         console.log('location permission denied');
         alert('Location denied');
       }
+
+      await watchPositionAsync(
+        {
+          accuracy: Accuracy.BestForNavigation,
+          timeInterval: 1000,
+          distanceInterval: 10,
+        },
+        location => {
+          console.log(location);
+        },
+      );
     } catch (err) {
       setErr(err);
     }
