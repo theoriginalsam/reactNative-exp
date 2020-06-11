@@ -10,8 +10,8 @@ const authReducer = (state, action) => {
     case 'error_add':
       return {...state, errorMes: action.payload};
 
-    case 'add_user':
-      return {errorMes: '', token: action.token};
+    case 'add_user': // for both sign in and sign out
+      return {errorMes: '', token: action.payload};
 
     case 'clear_msg':
       return {...state, errorMes: ''};
@@ -32,8 +32,8 @@ const signup = dispatch => {
     try {
       const response = await tracerApi.post('/signup', {email, password});
       await AsyncStorage.setItem('token', response.data.token);
-      dispatch({type: 'add_user', token: response.data.token});
-      navigate('TrackScreen');
+      dispatch({type: 'add_user', payload: response.data.token});
+      navigate('Signin');
     } catch (err) {
       dispatch({type: 'error_add', payload: 'Erro sign up'});
     }
@@ -46,7 +46,7 @@ const signin = dispatch => {
       const response = await tracerApi.post('/signin', {email, password});
 
       await AsyncStorage.setItem('token', response.data.token);
-      dispatch({type: 'add_user', token: response.data.token});
+      dispatch({type: 'add_user', payload: response.data.token});
       navigate('TrackScreen');
       console.log('SignedIN');
       console.log(response.data.token);
