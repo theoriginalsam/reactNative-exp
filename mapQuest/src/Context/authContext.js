@@ -14,7 +14,7 @@ const authReducer = (state, action) => {
       return {errorMes: '', token: action.payload};
 
     case 'clear_msg':
-      return {...state, errorMes: ''};
+      return {...state, errorMes: 's'};
     case 'log_out':
       return {token: null, errorMes: ''};
 
