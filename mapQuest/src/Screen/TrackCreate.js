@@ -26,7 +26,7 @@ const TrackCreate = () => {
         alert('You can use the location');
       } else {
         console.log('location permission denied');
-        alert('Location permission denied');
+        alert('Location denied');
       }
     } catch (err) {
       setErr(err);
