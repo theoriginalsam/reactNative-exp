@@ -29,7 +29,7 @@ const TrackCreate = () => {
         alert('Location permission denied');
       }
     } catch (err) {
-      console.warn(err);
+      setErr(err);
     }
   };
 
