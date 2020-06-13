@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "gita": " git add . && git commit -m'commit via script' && git push origin master --force",
+    "gita": " git add . && git commit -ma'commit via script' && git push origin master --force",
     "gitc": "git add . && git commit -m'commit via script' "
   },
   "dependencies": {
