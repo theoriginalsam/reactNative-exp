@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 const List = () => {
   return (
     <View>
-      <Text>Hey</Text>
+      <Text>This is the format or the boiler plate text</Text>
     </View>
   );
 };
