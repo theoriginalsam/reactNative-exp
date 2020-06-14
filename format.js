@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 const List = () => {
   return (
     <View>
-      <Text>He</Text>
+      <Text>Hey</Text>
     </View>
   );
 };
