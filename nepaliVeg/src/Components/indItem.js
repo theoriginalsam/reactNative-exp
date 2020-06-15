@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 500,
     bottom: 20,
-    zIndex: -10,
+    zIndex: -100,
   },
 });
 
