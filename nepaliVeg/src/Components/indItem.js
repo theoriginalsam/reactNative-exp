@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 22,
     fontWeight: 'bold',
-    color: '#504136',
+    color: '#504135',
   },
   badges: {
     marginTop: 10,
