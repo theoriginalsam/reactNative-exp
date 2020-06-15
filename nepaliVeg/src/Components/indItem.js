@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   backgroundImage: {
     resizeMode: 'contain', // or 'stretch'
     position: 'absolute',
-    width: 500,
+    width: 501,
     bottom: 20,
     zIndex: -1000,
   },
