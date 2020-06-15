@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     top: 75,
   },
   backgroundImage: {
-    resizeMode: 'contain', // or 'stretch'
+    resizeMode: 'contain',
     position: 'absolute',
     width: 500,
     bottom: 20,
