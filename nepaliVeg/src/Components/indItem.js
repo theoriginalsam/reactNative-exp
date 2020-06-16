@@ -29,6 +29,9 @@ const List = ({navigation}) => {
             justifyContent: 'space-around',
           }}
         />
+        <View>
+          <Text>For date range</Text>
+        </View>
         <View style={styles.badges}>
           <Badge status="primary" value=" Avg " />
           <Badge status="success" value=" Min " />
