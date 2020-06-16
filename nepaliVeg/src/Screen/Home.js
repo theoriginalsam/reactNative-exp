@@ -46,6 +46,10 @@ const Home = ({navigation}) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    fontFamily: 'Montserrat',
+  },
+});
 
 export default Home;
