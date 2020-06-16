@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, FlatList, Image} from 'react-native';
+import {StyleSheet, View, Text, FlatList, Image, Button} from 'react-native';
 
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Date from './dateRange';
 
 const Items = ({navigation, results}) => {
   const [dates, setDates] = useState([]);
@@ -18,7 +17,14 @@ const Items = ({navigation, results}) => {
         <Image source={require('../../assets/3.jpg')} style={styles.logo} />
       </View>
 
-      <Date />
+      <View>
+        <Button
+          title="Set A Date Range"
+          onPress={() => {
+            navigation.navigate('DateS');
+          }}
+        />
+      </View>
 
       <View style={styles.container}></View>
       <FlatList
