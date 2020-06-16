@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text, FlatList, Image} from 'react-native';
 
-import IndScreen from './indItem';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Date from './dateRange';
 
 const Items = ({navigation, results}) => {
-  //console.log(results.result);
+  const [dates, setDates] = useState([]);
 
   var resultName = [];
   for (var i in results.result) {
@@ -17,6 +17,10 @@ const Items = ({navigation, results}) => {
       <View style={styles.imageB}>
         <Image source={require('../../assets/3.jpg')} style={styles.logo} />
       </View>
+
+      <Date />
+
+      <View style={styles.container}></View>
       <FlatList
         data={resultName}
         keyExtractor={(item) => item}
