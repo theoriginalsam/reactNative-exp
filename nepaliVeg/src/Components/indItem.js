@@ -61,9 +61,9 @@ const List = ({navigation}) => {
               Retail
             </Text>
             <View style={styles.tiles}>
-              <Text style={styles.textTiles}>Error Fetch</Text>
-              <Text style={styles.textTiles}>Error Fetch</Text>
-              <Text style={styles.textTiles}>Error Fetch</Text>
+              <Text style={styles.textTilesA}>Error Fetch</Text>
+              <Text style={styles.textTilesM}>Error Fetch</Text>
+              <Text style={styles.textTilesMx}>Error Fetch</Text>
             </View>
             <Text style={{textAlign: 'center'}}>
               {' '}
@@ -93,9 +93,9 @@ const List = ({navigation}) => {
           <View style={styles.aboveTiles}>
             <Text h2> WholeSale</Text>
             <View style={styles.tiles}>
-              <Text style={styles.textTiles}>Error Fetch</Text>
-              <Text style={styles.textTiles}>Error Fetch</Text>
-              <Text style={styles.textTiles}>Error Fetch</Text>
+              <Text style={styles.textTilesA}>Error Fetch</Text>
+              <Text style={styles.textTilesM}>Error Fetch</Text>
+              <Text style={styles.textTilesMx}>Error Fetch</Text>
             </View>
             <Text style={{textAlign: 'center'}}>
               Database not updated. Sorry for the inconvinience
@@ -173,6 +173,7 @@ const styles = StyleSheet.create({
     width: 500,
     bottom: 20,
     zIndex: -100,
+    opacity: 0.3,
   },
 });
 
