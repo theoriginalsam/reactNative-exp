@@ -8,13 +8,12 @@ import {ScrollView} from 'react-native-gesture-handler';
 const List = ({navigation}) => {
   const result = navigation.getParam('results');
   const id = navigation.getParam('id');
-  console.log(id);
 
   const filtered = result.filter((result) => {
     return result.commodityName == id;
   });
 
-  console.log(filtered);
+  // console.log(filtered);
 
   return (
     <ScrollView>
