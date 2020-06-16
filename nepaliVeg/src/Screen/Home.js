@@ -48,7 +48,7 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Montserrat-Bold',
   },
 });
 
