@@ -23,7 +23,7 @@ const Home = () => {
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.textHeader} h4>
-          Welcome to Humor Area
+          Welcome to Humour Area
         </Text>
         <Card style={styles.card}>
           <Text style={styles.textTitle}>QUOTE OF THE MOMENT</Text>
