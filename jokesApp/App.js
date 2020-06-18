@@ -18,8 +18,10 @@ const switchNavigator = createSwitchNavigator({
     Home: {
       screen: Home,
       navigationOptions: {
-        tabBarLabel: 'ShoutOut',
-        tabBarIcon: <Ionicons name="md-home" size={20} />,
+        tabBarLabel: 'HOME',
+        tabBarIcon: () => {
+          <Ionicons name="md-home" size={20} />;
+        },
       },
     },
     Category: createStackNavigator({
