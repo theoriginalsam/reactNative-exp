@@ -14,7 +14,7 @@ import CategoryJokes from './src/Jokes/CategoryJokes';
 const switchNavigator = createSwitchNavigator({
   bottomFlow: createBottomTabNavigator({
     Home: Home,
-    JokeSFlow: createStackNavigator({
+    Category: createStackNavigator({
       Category: Category,
       CategoryJokes: CategoryJokes,
     }),

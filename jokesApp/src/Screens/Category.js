@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'green',
     borderBottomEndRadius: 100,
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 15,
 
     padding: 10,
     margin: 10,

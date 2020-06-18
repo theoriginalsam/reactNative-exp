@@ -20,9 +20,19 @@ const CategoryJokes = ({navigation}) => {
         keyExtractor={(item) => item.id}
         renderItem={({item}) => {
           return (
-            <Card style={{color: 'red'}}>
-              <Text>{item.body}</Text>
-            </Card>
+            <View style={{backgroundColor: 'grey', padding: 10}}>
+              <Card>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'black',
+                    padding: 10,
+                    margin: 10,
+                  }}>
+                  {item.body}
+                </Text>
+              </Card>
+            </View>
           );
         }}
       />
