@@ -11,7 +11,7 @@ const Category = ({navigation}) => {
     category.push(JokesC[i].category);
   }
   const uniq = [...new Set(category)];
-  console.log(uniq);
+
   return (
     <View>
       {/* <Text

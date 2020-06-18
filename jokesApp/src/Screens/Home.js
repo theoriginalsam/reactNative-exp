@@ -15,7 +15,6 @@ import Quotes from '../Quotes/quotes.json';
 const Home = () => {
   const number = JokesC.length;
   const numberQ = Quotes.length;
-  console.log(numberQ);
 
   const randomJ = Math.floor(Math.random() * 2000) + 1;
   const randomQ = Math.floor(Math.random() * 5000) + 1;

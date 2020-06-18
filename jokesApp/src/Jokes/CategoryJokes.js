@@ -11,7 +11,6 @@ const CategoryJokes = ({navigation}) => {
   const filtered = result.filter((result) => {
     return result.category == id;
   });
-  console.log(filtered[2].body);
 
   return (
     <View>
