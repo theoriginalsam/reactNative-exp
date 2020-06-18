@@ -31,7 +31,7 @@ const Home = () => {
           <Text style={styles.textAuthor}>-{Quotes[randomQ].quoteAuthor}</Text>
         </Card>
         <Card style={styles.card}>
-          <Text style={styles.textTitle}>JOKE Of THE MOMENT</Text>
+          <Text style={styles.textTitle}>JOKE OF THE MOMENT</Text>
           <CardContent text={JokesC[randomJ].body} />
         </Card>
       </ScrollView>
