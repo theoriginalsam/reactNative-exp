@@ -26,7 +26,7 @@ const Home = () => {
           Welcome to Humor Area
         </Text>
         <Card style={styles.card}>
-          <Text style={styles.textTitle}>QUOTE OF THE MOMENT</Text>
+          <Text style={styles.textTitle}>QUOTE Of THE MOMENT</Text>
           <CardContent text={Quotes[randomQ].quoteText} />
           <Text style={styles.textAuthor}>-{Quotes[randomQ].quoteAuthor}</Text>
         </Card>
