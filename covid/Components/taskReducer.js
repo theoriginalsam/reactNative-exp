@@ -1,4 +1,4 @@
-export const foodReducer = (state = ['samir'], action) => {
+export const foodReducer = (state = [], action) => {
   switch (action.type) {
     case 'add_task':
       return [...state, action.payload];
@@ -11,6 +11,9 @@ export const foodReducer = (state = ['samir'], action) => {
   }
 };
 
-export const addTask = dispatch => task => {
-  dispatch({type: 'add_task', payload: task});
+export const addTask = dispatch => {
+  return () => {
+    console.log('runnig');
+    dispatch({type: 'add_task', payload: task});
+  };
 };

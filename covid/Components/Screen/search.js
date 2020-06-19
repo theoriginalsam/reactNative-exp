@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import {addTask} from '../taskReducer';
+import {addTask, test} from '../taskReducer';
 
 const HomeScreen = props => {
   const [task, setTask] = useState('');
@@ -16,8 +16,8 @@ const HomeScreen = props => {
       <SearchB task={task} onTermChange={newTask => setTask(newTask)} />
       <Button
         title="Add"
-        onPress={() => {
-          addTask({task});
+        onPress={task => {
+          addTask(task);
         }}
       />
       <TouchableOpacity
