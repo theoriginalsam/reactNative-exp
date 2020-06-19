@@ -1,121 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, View, Text, FlatList, Button} from 'react-native';
 import SearchB from '../reusableC/SearchB';
-const axios = require('axios');
-import CountryS from '../reusableC/CountryS'
 
-let Country, CountryC
-let i = 0
+import {
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native-gesture-handler';
+import {NavigationEvents} from 'react-navigation';
+import {addTask} from '../taskReducer';
 
+const HomeScreen = props => {
+  const [task, setTask] = useState('');
 
-const Search = () => {
-
-    const [string, setString] = useState('');
-
-    const getResult = axios.create({
-        baseURL: 'https://api.covid19api.com',
-    });
-
-
-    const [results, setResults] = useState([]);
-
-
-
-    console.log(results)
-
-
-    const searchApi = async () => {
-
-
-        try {
-            const response = await getResult.get('/summary');
-
-
-            setResults(response.data);
-
-
-
-
-        } catch (e) { console.log("Error") }
-
-
-
-
-    };
-
-
-
-
-    useEffect(() => {
-
-        searchApi()
-
-    }, [])
-
-
-
-
-    // const searchApiC = (text) => {
-
-    //     console.log("Running before")
-
-    //     console.log(text)
-
-    //     for (i = 0; i < 186; i++) {
-    //         if (results.Countries[i].Country == text) {
-    //             CountryC = i
-    //             console.log(CountryC)
-    //             return CountryC
-    //         }
-
-
-    //     }
-    // }
-
-
-
-
-
-
-
-    return (
-        <View>
-
-
-            <SearchB
-                style={styles.fontS}
-                string={string}
-                onTermChange={newString => setString(newString)}
-                onTermSubmit={() => searchApi()}
-
-
-            />
-
-
-            <FlatList
-                data={results}
-                keyExtractor={results => results.Countries.slug}
-                renderItem={({ item }) => {
-                    return <Text>{item.Global.NewConfirmed}</Text>
-
-                }}
-
-            />
-
-
-
-
-
-
-        </View>
-    );
+  return (
+    <View>
+      <SearchB task={task} onTermChange={newTask => setTask(newTask)} />
+      <Button
+        title="Add"
+        onPress={() => {
+          addTask({task});
+        }}
+      />
+      <TouchableOpacity
+        onPress={() => {
+          props.navigation.navigate('TaskList');
+        }}>
+        <Text>See whats on the list</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
-const styles = StyleSheet.create({
-    fontS: {
-        fontSize: 20,
+const styles = StyleSheet.create({});
 
-    },
-});
-
-export default Search;
+export default HomeScreen;
