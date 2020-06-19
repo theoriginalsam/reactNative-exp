@@ -1,12 +1,7 @@
 export const foodReducer = (state = [], action) => {
   switch (action.type) {
     case 'add_task':
-      return {
-        ...state,
-        state: state.push({
-          taskString: action.payload,
-        }),
-      };
+      return [...state, action.payload];
 
     case 'del_task':
       return;
