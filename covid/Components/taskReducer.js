@@ -1,4 +1,4 @@
-export const foodReducer = (state = [], action) => {
+export const foodReducer = (state = ['samir'], action) => {
   switch (action.type) {
     case 'add_task':
       return [...state, action.payload];

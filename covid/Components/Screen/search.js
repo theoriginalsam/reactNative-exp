@@ -12,6 +12,7 @@ import {addTask} from '../taskReducer';
 
 const HomeScreen = props => {
   const [task, setTask] = useState('');
+  console.log(props.names);
 
   return (
     <View>
@@ -31,12 +32,10 @@ const HomeScreen = props => {
     </View>
   );
 };
-// function mapStateToProps(state) {
-//   return {
-//     task: state.payload,
-//   };
-// }
+const mapStateToProps = state => {
+  return {names: state};
+};
 
 const styles = StyleSheet.create({});
 
-export default HomeScreen;
+export default connect(mapStateToProps)(HomeScreen);
