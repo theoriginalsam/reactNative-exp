@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Text, FlatList, Button} from 'react-native';
 import SearchB from '../reusableC/SearchB';
+import {connect} from 'react-redux';
 
 import {
   TouchableHighlight,
@@ -30,7 +31,12 @@ const HomeScreen = props => {
     </View>
   );
 };
+function mapStateToProps(state) {
+  return {
+    task: state.payload,
+  };
+}
 
 const styles = StyleSheet.create({});
 
-export default HomeScreen;
+export default connect(mapStateToProps)(HomeScreen);
