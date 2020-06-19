@@ -13,7 +13,7 @@ export const foodReducer = (state = [], action) => {
 
 export const addTask = dispatch => {
   return () => {
-    console.log('runnig');
+    console.log('FUCK CONTINUE FROM HERE');
     dispatch({type: 'add_task', payload: task});
   };
 };
