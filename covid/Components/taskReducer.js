@@ -1,10 +1,9 @@
-export const foodReducer = (state, action) => {
+export const foodReducer = (state = [], action) => {
   switch (action.type) {
     case 'add_task':
       return {
         ...state,
-        state: state.concat({
-          key: Math.random(),
+        state: state.push({
           taskString: action.payload,
         }),
       };
