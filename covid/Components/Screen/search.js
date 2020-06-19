@@ -31,12 +31,12 @@ const HomeScreen = props => {
     </View>
   );
 };
-function mapStateToProps(state) {
-  return {
-    task: state.payload,
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     task: state.payload,
+//   };
+// }
 
 const styles = StyleSheet.create({});
 
-export default connect(mapStateToProps)(HomeScreen);
+export default HomeScreen;

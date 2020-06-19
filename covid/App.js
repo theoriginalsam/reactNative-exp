@@ -13,6 +13,8 @@ const initialState = {
 
 const store = createStore(foodReducer);
 
+console.log(store.getState());
+
 const navigator = createStackNavigator(
   {
     Home: Home,
