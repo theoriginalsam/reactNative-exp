@@ -26,7 +26,7 @@ const HomeScreen = props => {
         onPress={() => {
           props.navigation.navigate('TaskList');
         }}>
-        <Text>See the list</Text>
+        <Text>See the </Text>
       </TouchableOpacity>
     </View>
   );
