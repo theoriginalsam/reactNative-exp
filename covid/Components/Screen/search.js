@@ -3,11 +3,8 @@ import {StyleSheet, View, Text, FlatList, Button} from 'react-native';
 import SearchB from '../reusableC/SearchB';
 import {connect} from 'react-redux';
 
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-} from 'react-native-gesture-handler';
-import {NavigationEvents} from 'react-navigation';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import {addTask} from '../taskReducer';
 
 const HomeScreen = props => {
