@@ -16,4 +16,4 @@ export const foodReducer = (state = [], action) => {
 //     console.log('FUCK CONTINUE FROM HERE');
 //     dispatch({type: 'add_task', payload: task});
 //   };
-// }; beacause we are using REDUX this method cant work here, this is for the useReducer hook
+// }; beacause we are using REDUX this method doesnt work here, this is for the useReducer hook
