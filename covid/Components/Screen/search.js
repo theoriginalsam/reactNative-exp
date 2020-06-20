@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {addTask, test} from '../taskReducer';
+import action from '../actions';
 
 const HomeScreen = props => {
   const [task, setTask] = useState('');
@@ -35,4 +36,7 @@ const mapStateToProps = state => {
 
 const styles = StyleSheet.create({});
 
-export default connect(mapStateToProps)(HomeScreen);
+export default connect(
+  mapStateToProps,
+  action,
+)(HomeScreen);
