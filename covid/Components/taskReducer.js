@@ -13,7 +13,7 @@ export const foodReducer = (state = [], action) => {
 
 // export const addTask = dispatch => {
 //   return () => {
-//     console.log('This ');
+//     console.log('This doesnt work here ');
 //     dispatch({type: 'add_task', payload: task});
 //   };
 // }; beacause we are using REDUX this method doesnt work here, this is for the useReducer hook
