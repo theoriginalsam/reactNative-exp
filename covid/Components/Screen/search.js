@@ -15,12 +15,7 @@ const HomeScreen = props => {
   return (
     <View>
       <SearchB task={task} onTermChange={newTask => setTask(newTask)} />
-      <Button
-        title="Add"
-        onPress={task => {
-          addTask(task);
-        }}
-      />
+      <Button title="Add" onPress={props.createTask()} />
       <TouchableOpacity
         onPress={() => {
           props.navigation.navigate('TaskList');
