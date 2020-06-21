@@ -33,16 +33,14 @@ const Chart = ({result, id}) => {
   const sixD = moment(sixDay).format('l');
 
   var arr = [
-    result[id][todayD]['avg_price'],
-    result[id][yesD]['avg_price'],
-    result[id][twoD]['avg_price'],
-    result[id][threeD]['avg_price'],
-    result[id][fourD]['avg_price'],
-    result[id][fiveD]['avg_price'],
-    result[id][sixD]['avg_price'],
+    parseInt(result[id][todayD]['avg_price']),
+    parseInt(result[id][yesD]['avg_price']),
+    parseInt(result[id][twoD]['avg_price']),
+    parseInt(result[id][threeD]['avg_price']),
+    parseInt(result[id][fourD]['avg_price']),
+    parseInt(result[id][fiveD]['avg_price']),
+    parseInt(result[id][sixD]['avg_price']),
   ];
-  var arrT = [1, 2, 3, 4, 5, 6];
-  console.log(arr);
 
   return (
     <View>
@@ -61,7 +59,7 @@ const Chart = ({result, id}) => {
           ],
           datasets: [
             {
-              data: arrT,
+              data: arr,
             },
           ],
         }}
