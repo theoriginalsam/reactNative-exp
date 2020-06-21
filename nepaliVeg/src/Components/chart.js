@@ -3,15 +3,12 @@ import React from 'react';
 import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const Chart = ({filtered}) => {
-  var arr = [];
-  if (filtered[0].retailPrice[0] !== undefined) {
-    for (let i = 0; i < 6; i++) {
-      arr.push(filtered[0].retailPrice[i].avg);
-    }
-  } else {
-    arr = [0, 0, 0, 0, 0, 0];
-  }
+const Chart = ({result}) => {
+  var today = new Date().toISOString().slice(0, 10);
+  const todayD = moment(today).format('l');
+
+  var arr = [result[id][todayD]['avg_price']];
+
   var arrW = [];
   if (filtered[0].wholesalePrice[0] !== undefined) {
     for (let i = 0; i < 6; i++) {
