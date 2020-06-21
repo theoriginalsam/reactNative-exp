@@ -11,7 +11,11 @@ const Home = ({navigation}) => {
     console.log('Runnig');
     console.log(typeof full5);
     try {
-      const response = await VegApi.get('/');
+      const response = await VegApi.get('/', {
+        params: {
+          date_range: sixDay + 'T18:15:00.000Z,' + today + 'T18:14:59.000Z',
+        },
+      });
 
       setResults(response.data);
     } catch (e) {

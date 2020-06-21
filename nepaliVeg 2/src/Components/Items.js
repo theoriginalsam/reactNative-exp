@@ -4,12 +4,19 @@ import {StyleSheet, View, Text, FlatList, Image, Button} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Items = ({navigation, results}) => {
-  var resultName = [];
+  const [dates, setDates] = useState([]);
+  const onlyResult = results.result;
 
-  for (var i in results) {
-    resultName.push([i]);
+  const filt = results.filter((results) => {
+    return true;
+  });
+
+  console.log(filt);
+
+  var resultName = [];
+  for (var i in results.result) {
+    resultName[i] = results.result[i].commodityName;
   }
-  console.log(resultName);
 
   return (
     <View style={styles.container}>
@@ -26,7 +33,7 @@ const Items = ({navigation, results}) => {
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('IndScreen', {
-                  results: results,
+                  results: results.result,
                   id: item,
                 });
               }}>

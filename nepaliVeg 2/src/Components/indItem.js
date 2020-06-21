@@ -9,11 +9,11 @@ const List = ({navigation}) => {
   const result = navigation.getParam('results');
   const id = navigation.getParam('id');
 
-  console.log(id.length);
-  const parse = Object.entries(result);
+  const filtered = result.filter((result) => {
+    return result.commodityName == id;
+  });
 
-  const parseD = Object.entries(parse);
-  console.log(parseD[1][1]);
+  // console.log(filtered);
 
   return (
     <ScrollView>
@@ -36,25 +36,74 @@ const List = ({navigation}) => {
           <Badge status="warning" value=" Max " />
         </View>
 
-        <View style={styles.aboveTiles}>
-          <Text style={{marginLeft: 10}} h2>
-            {' '}
-            Price
-          </Text>
-          <View style={styles.tiles}>
-            <Text style={styles.textTilesA}>
-              {result[id]['6/11/2020']['avg_price']}
+        {filtered[0].retailPrice[0] ? (
+          <View style={styles.aboveTiles}>
+            <Text style={{marginLeft: 10}} h2>
+              {' '}
+              Retail
             </Text>
-            <Text style={styles.textTilesM}>
-              {result[id]['6/11/2020']['max_price']}
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>
+                {filtered[0].retailPrice[5].avg}
+              </Text>
+              <Text style={styles.textTilesM}>
+                {filtered[0].retailPrice[5].min}
+              </Text>
+              <Text style={styles.textTilesMx}>
+                {filtered[0].retailPrice[5].max}
+              </Text>
+            </View>
+          </View>
+        ) : (
+          <View>
+            <Text style={{marginLeft: 10}} h2>
+              {' '}
+              Retail
             </Text>
-            <Text style={styles.textTilesMx}>
-              {result[id]['6/11/2020']['min_price']}
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>0</Text>
+              <Text style={styles.textTilesM}>0</Text>
+              <Text style={styles.textTilesMx}>0</Text>
+            </View>
+            <Text style={{textAlign: 'center'}}>
+              {' '}
+              Database not updated. Sorry for the inconvinience
             </Text>
           </View>
-        </View>
+        )}
 
-        {/* <Chart result={result} /> */}
+        {filtered[0].wholesalePrice[0] ? (
+          <View>
+            <Text h2 style={{marginLeft: 10}}>
+              WholeSale
+            </Text>
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>
+                {filtered[0].wholesalePrice[5].avg}
+              </Text>
+              <Text style={styles.textTilesM}>
+                {filtered[0].wholesalePrice[5].min}
+              </Text>
+              <Text style={styles.textTilesMx}>
+                {filtered[0].wholesalePrice[5].max}
+              </Text>
+            </View>
+          </View>
+        ) : (
+          <View style={styles.aboveTiles}>
+            <Text h2> WholeSale</Text>
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>0</Text>
+              <Text style={styles.textTilesM}>0</Text>
+              <Text style={styles.textTilesMx}>0</Text>
+            </View>
+            <Text style={{textAlign: 'center'}}>
+              Database not updated. Sorry for the inconvinience
+            </Text>
+          </View>
+        )}
+
+        <Chart filtered={filtered} />
         <Image
           source={require('../../assets/2.jpg')}
           style={styles.backgroundImage}
