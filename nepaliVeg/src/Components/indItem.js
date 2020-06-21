@@ -1,19 +1,18 @@
 import React from 'react';
-import {StyleSheet, View, Image} from 'react-native';
+import {StyleSheet, View, Image, ProgressViewIOSComponent} from 'react-native';
 import {Text} from 'react-native-elements';
 import {Header, Badge} from 'react-native-elements';
 import Chart from './chart';
 import {ScrollView} from 'react-native-gesture-handler';
+import moment from 'moment';
 
 const List = ({navigation}) => {
   const result = navigation.getParam('results');
   const id = navigation.getParam('id');
 
-  console.log(id.length);
-  const parse = Object.entries(result);
-
-  const parseD = Object.entries(parse);
-  console.log(parseD[1][1]);
+  var today = new Date().toISOString().slice(0, 10);
+  const todayD = moment(today).format('l');
+  console.log(todayD);
 
   return (
     <ScrollView>
@@ -43,13 +42,13 @@ const List = ({navigation}) => {
           </Text>
           <View style={styles.tiles}>
             <Text style={styles.textTilesA}>
-              {result[id]['6/11/2020']['avg_price']}
+              {result[id][todayD]['avg_price']}
             </Text>
             <Text style={styles.textTilesM}>
-              {result[id]['6/11/2020']['max_price']}
+              {result[id][todayD]['max_price']}
             </Text>
             <Text style={styles.textTilesMx}>
-              {result[id]['6/11/2020']['min_price']}
+              {result[id][todayD]['min_price']}
             </Text>
           </View>
         </View>
