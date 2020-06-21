@@ -53,7 +53,7 @@ const List = ({navigation}) => {
           </View>
         </View>
 
-        {/* <Chart result={result} /> */}
+        <Chart result={result} id={id} />
         <Image
           source={require('../../assets/2.jpg')}
           style={styles.backgroundImage}
