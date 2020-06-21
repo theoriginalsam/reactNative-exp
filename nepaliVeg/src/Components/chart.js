@@ -102,7 +102,7 @@ const Chart = ({result, id}) => {
           propsForDots: {
             r: '7',
             strokeWidth: '2',
-            stroke: '#ffa726',
+            stroke: '#ffb726',
           },
         }}
         bezier
