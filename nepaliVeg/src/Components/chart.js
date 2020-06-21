@@ -30,7 +30,7 @@ const Chart = ({result, id}) => {
   var sixDay = new Date(new Date().setDate(new Date().getDate() - 6))
     .toISOString()
     .slice(0, 10);
-  const sixD = moment(sixDay).format('l');
+  const sixD = moment(sixDay).format('L');
 
   var arr = [
     result[id][todayD]['avg_price'],
