@@ -32,31 +32,53 @@ const Chart = ({result, id}) => {
     .slice(0, 10);
   const sixD = moment(sixDay).format('l');
 
-  var arr = [
-    parseInt(result[id][todayD]['avg_price']),
-    parseInt(result[id][yesD]['avg_price']),
-    parseInt(result[id][twoD]['avg_price']),
-    parseInt(result[id][threeD]['avg_price']),
-    parseInt(result[id][fourD]['avg_price']),
-    parseInt(result[id][fiveD]['avg_price']),
-    parseInt(result[id][sixD]['avg_price']),
-  ];
+  var arr = [];
+
+  if (result[id][todayD]) {
+    arr.push(parseInt(result[id][todayD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][yesD]) {
+    arr.push(parseInt(result[id][yesD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][twoD]) {
+    arr.push(parseInt(result[id][twoD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][threeD]) {
+    arr.push(parseInt(result[id][threeD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][fourD]) {
+    arr.push(parseInt(result[id][fourD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][fiveD]) {
+    arr.push(parseInt(result[id][fiveD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+  if (result[id][sixD]) {
+    arr.push(parseInt(result[id][sixD]['avg_price']));
+  } else {
+    arr.push(0);
+  }
+
+  console.log(arr);
 
   return (
     <View>
-      <Text style={styles.marginFC}>Price Chart for RETAIL MARKET</Text>
+      <Text style={styles.marginFC}>Price Chart for MARKET</Text>
       <LineChart
         style={styles.marginFC}
         data={{
-          labels: [
-            '6 Day',
-            '5 Day',
-            '4 Day',
-            '3 Day',
-            '2 Day',
-            'Yesteday',
-            'Today',
-          ],
+          labels: ['T', 'Y', '2 ', '3 ', '4 ', '5 ', '6 '],
           datasets: [
             {
               data: arr,
