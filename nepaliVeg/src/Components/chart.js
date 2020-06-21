@@ -74,7 +74,7 @@ const Chart = ({result, id}) => {
 
   return (
     <View>
-      <Text style={styles.marginFC}>Price Chart for MARKET</Text>
+      <Text style={styles.marginFC}>Price Chart</Text>
       <LineChart
         style={styles.marginFC}
         data={{
@@ -108,10 +108,17 @@ const Chart = ({result, id}) => {
         bezier
         style={{
           borderRadius: 20,
+          marginBottom: 25,
 
           alignSelf: 'center',
         }}
       />
+
+      {arr.includes(0) ? (
+        <View>
+          <Text>Some error led to price fall.</Text>
+        </View>
+      ) : null}
     </View>
   );
 };
