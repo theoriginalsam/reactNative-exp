@@ -17,15 +17,6 @@ const Items = ({navigation, results}) => {
         <Image source={require('../../assets/3.jpg')} style={styles.logo} />
       </View>
 
-      <View>
-        <Button
-          title="Set A Date Range"
-          onPress={() => {
-            navigation.navigate('DateS');
-          }}
-        />
-      </View>
-
       <View style={styles.container}></View>
       <FlatList
         data={resultName}
