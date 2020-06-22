@@ -2,41 +2,81 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text, FlatList, Image, Button} from 'react-native';
 
 import {TouchableOpacity} from 'react-native-gesture-handler';
-
+import SearchC from '../Components/SearchC';
 const Items = ({navigation, results}) => {
+  const [string, setString] = useState('');
   var resultName = [];
 
   for (var i in results) {
     resultName.push([i]);
   }
-  console.log(resultName);
+  var matched = [];
+  console.log(string[0]);
+  // console.log(resultName[1][0][0]);
+  for (var i in resultName) {
+    if (resultName[i][0][0] == string[0]) {
+      matched.push(resultName[i]);
+    }
+  }
+
+  let unique = [...new Set(matched)];
+  console.log(unique);
 
   return (
     <View style={styles.container}>
       <View style={styles.imageB}>
         <Image source={require('../../assets/3.jpg')} style={styles.logo} />
       </View>
-
-      <View style={styles.container}></View>
-      <FlatList
-        data={resultName}
-        keyExtractor={(item) => item}
-        renderItem={({item}) => {
-          return (
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('IndScreen', {
-                  results: results,
-                  id: item,
-                });
-              }}>
-              <View>
-                <Text style={styles.items}>{item}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
+      <SearchC
+        // style={styles.fontS}
+        string={string}
+        onTermChange={(newString) => setString(newString)}
       />
+      {string.length == 0 ? (
+        <View style={styles.container}>
+          <FlatList
+            data={resultName}
+            keyExtractor={(item) => item}
+            renderItem={({item}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('IndScreen', {
+                      results: results,
+                      id: item,
+                    });
+                  }}>
+                  <View>
+                    <Text style={styles.items}>{item}</Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+      ) : (
+        <View style={styles.container}>
+          <FlatList
+            data={unique}
+            keyExtractor={(item) => item}
+            renderItem={({item}) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('IndScreen', {
+                      results: results,
+                      id: item,
+                    });
+                  }}>
+                  <View>
+                    <Text style={styles.items}>{item}</Text>
+                  </View>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+      )}
     </View>
   );
 };
