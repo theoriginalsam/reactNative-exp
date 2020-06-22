@@ -70,11 +70,47 @@ const Chart = ({result, id}) => {
     arr.push(0);
   }
 
-  console.log(arr);
+  var arrM = [];
+
+  if (result[id][todayD]) {
+    arrM.push(parseInt(result[id][todayD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][yesD]) {
+    arrM.push(parseInt(result[id][yesD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][twoD]) {
+    arrM.push(parseInt(result[id][twoD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][threeD]) {
+    arrM.push(parseInt(result[id][threeD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][fourD]) {
+    arrM.push(parseInt(result[id][fourD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][fiveD]) {
+    arrM.push(parseInt(result[id][fiveD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
+  if (result[id][sixD]) {
+    arrM.push(parseInt(result[id][sixD]['max_price']));
+  } else {
+    arrM.push(0);
+  }
 
   return (
     <View>
-      <Text style={styles.marginFC}>Price Chart</Text>
+      <Text style={styles.marginFC}>Price Chart(AVG)</Text>
       <LineChart
         style={styles.marginFC}
         data={{
@@ -91,7 +127,53 @@ const Chart = ({result, id}) => {
         yAxisInterval={1} // optional, defaults to 1
         chartConfig={{
           backgroundColor: '#e26a00',
-          backgroundGradientFrom: '#3b3c00',
+          backgroundGradientFrom: '#3b5c19',
+          backgroundGradientTo: '#3fa726',
+          decimalPlaces: 2, // optional, defaults to 2dp
+          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+          labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+          style: {
+            borderRadius: 16,
+          },
+          propsForDots: {
+            r: '7',
+            strokeWidth: '2',
+            stroke: '#ffa726',
+          },
+        }}
+        bezier
+        style={{
+          borderRadius: 20,
+          marginBottom: 25,
+
+          alignSelf: 'center',
+        }}
+      />
+
+      {arr.includes(0) ? (
+        <View>
+          <Text>Some error led to price fall.</Text>
+        </View>
+      ) : null}
+
+      <Text style={styles.marginFC}>Price Chart (MAX)</Text>
+      <LineChart
+        style={styles.marginFC}
+        data={{
+          labels: ['T', 'Y', '2 ', '3 ', '4 ', '5 ', '6 '],
+          datasets: [
+            {
+              data: arrM,
+            },
+          ],
+        }}
+        width={Dimensions.get('window').width - 30} // from react-native
+        height={170}
+        yAxisLabel="Rs."
+        yAxisInterval={1} // optional, defaults to 1
+        chartConfig={{
+          backgroundColor: '#e26a00',
+          backgroundGradientFrom: '#3b5c19',
           backgroundGradientTo: '#3fa726',
           decimalPlaces: 2, // optional, defaults to 2dp
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,

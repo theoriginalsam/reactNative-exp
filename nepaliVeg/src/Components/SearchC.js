@@ -9,6 +9,7 @@ const SearchC = ({string, onTermChange, onTermSubmit}) => {
       <Icon style={styles.iconS} name="search" color="#ccc" size={30} />
 
       <TextInput
+        autoCapitalize="words"
         placeholder="Search"
         style={styles.textInput}
         value={string}

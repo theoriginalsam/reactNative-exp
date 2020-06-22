@@ -5,14 +5,15 @@ import {Header, Badge} from 'react-native-elements';
 import Chart from './chart';
 import {ScrollView} from 'react-native-gesture-handler';
 import moment from 'moment';
+import Footer from './footer';
 
 const List = ({navigation}) => {
   const result = navigation.getParam('results');
   const id = navigation.getParam('id');
+  console.log(id);
 
   var today = new Date().toISOString().slice(0, 10);
   const todayD = moment(today).format('l');
-  console.log(todayD);
 
   return (
     <ScrollView>
@@ -20,7 +21,10 @@ const List = ({navigation}) => {
         <Header
           placement="center"
           leftComponent={{icon: 'rowing', color: '#fff'}}
-          centerComponent={{text: id, style: {fontSize: 30, color: 'white'}}}
+          centerComponent={{
+            text: id[0],
+            style: {fontSize: 20, color: 'white'},
+          }}
           rightComponent={{color: '#fff'}}
           containerStyle={{
             backgroundColor: 'grey',
@@ -36,8 +40,7 @@ const List = ({navigation}) => {
         </View>
 
         <View style={styles.aboveTiles}>
-          <Text style={{marginLeft: 10}} h2>
-            {' '}
+          <Text style={{alignSelf: 'center', color: 'grey'}} h2>
             Price
           </Text>
           <View style={styles.tiles}>
@@ -45,10 +48,10 @@ const List = ({navigation}) => {
               {result[id][todayD]['avg_price']}
             </Text>
             <Text style={styles.textTilesM}>
-              {result[id][todayD]['max_price']}
+              {result[id][todayD]['min_price']}
             </Text>
             <Text style={styles.textTilesMx}>
-              {result[id][todayD]['min_price']}
+              {result[id][todayD]['max_price']}
             </Text>
           </View>
         </View>
@@ -58,6 +61,8 @@ const List = ({navigation}) => {
           source={require('../../assets/2.jpg')}
           style={styles.backgroundImage}
         />
+
+        <Footer />
       </View>
     </ScrollView>
   );
