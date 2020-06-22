@@ -39,22 +39,33 @@ const List = ({navigation}) => {
           <Badge status="warning" value=" Max " />
         </View>
 
-        <View style={styles.aboveTiles}>
-          <Text style={{alignSelf: 'center', color: 'grey'}} h2>
-            Price
-          </Text>
-          <View style={styles.tiles}>
-            <Text style={styles.textTilesA}>
-              {result[id][todayD]['avg_price']}
+        {result[id][todayD] ? (
+          <View style={styles.aboveTiles}>
+            <Text style={{alignSelf: 'center', color: 'grey'}} h2>
+              Price
             </Text>
-            <Text style={styles.textTilesM}>
-              {result[id][todayD]['min_price']}
-            </Text>
-            <Text style={styles.textTilesMx}>
-              {result[id][todayD]['max_price']}
-            </Text>
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>
+                {result[id][todayD]['avg_price']}
+              </Text>
+              <Text style={styles.textTilesM}>
+                {result[id][todayD]['min_price']}
+              </Text>
+              <Text style={styles.textTilesMx}>
+                {result[id][todayD]['max_price']}
+              </Text>
+            </View>
           </View>
-        </View>
+        ) : (
+          <View style={styles.aboveTiles}>
+            <Text style={{alignSelf: 'center', color: 'grey'}} h2>
+              Price
+            </Text>
+            <View style={styles.tiles}>
+              <Text style={styles.textTilesA}>Price For Today Not UPDATED</Text>
+            </View>
+          </View>
+        )}
 
         <Chart result={result} id={id} />
         <Image

@@ -12,6 +12,7 @@ const Home = ({navigation}) => {
     console.log(typeof full5);
     try {
       const response = await VegApi.get('/');
+      setLoading(true);
 
       setResults(response.data);
     } catch (e) {

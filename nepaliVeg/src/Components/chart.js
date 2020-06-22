@@ -7,7 +7,7 @@ import moment from 'moment';
 const Chart = ({result, id}) => {
   var today = new Date().toISOString().slice(0, 10);
   const todayD = moment(today).format('l');
-  console.log(todayD);
+
   var yesterday = new Date(new Date().setDate(new Date().getDate() - 1))
     .toISOString()
     .slice(0, 10);
@@ -35,8 +35,8 @@ const Chart = ({result, id}) => {
 
   var arr = [];
 
-  if (result[id][yesD]) {
-    arr.push(parseInt(result[id][yesD]['avg_price']));
+  if (result[id][todayD]) {
+    arr.push(parseInt(result[id][todayD]['avg_price']));
   } else {
     arr.push(0);
   }
@@ -73,8 +73,8 @@ const Chart = ({result, id}) => {
 
   var arrM = [];
 
-  if (result[id][yesD]) {
-    arrM.push(parseInt(result[id][yesD]['max_price']));
+  if (result[id][todayD]) {
+    arrM.push(parseInt(result[id][todayD]['max_price']));
   } else {
     arrM.push(0);
   }
@@ -153,7 +153,7 @@ const Chart = ({result, id}) => {
 
       {arr.includes(0) ? (
         <View>
-          <Text style={{alignSelf: 'center'}}>
+          <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>
             Some error led to price fall.
           </Text>
         </View>
