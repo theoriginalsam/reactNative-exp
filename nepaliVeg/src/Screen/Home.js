@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Loadi} from 'react-native';
 import VegApi from '../api';
 import Item from '../Components/Items';
 import Items from '../Components/Items';
@@ -12,7 +12,7 @@ const Home = ({navigation}) => {
     console.log(typeof full5);
     try {
       const response = await VegApi.get('/');
-      setLoading(true);
+      
 
       setResults(response.data);
     } catch (e) {
@@ -26,6 +26,7 @@ const Home = ({navigation}) => {
   return (
     <View>
       <Items navigation={navigation} results={results} />
+      
     </View>
   );
 };
