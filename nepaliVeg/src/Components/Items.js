@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flexWrap: 'nowrap',
     backgroundColor: 'white',
+    marginBottom: 100,
   },
 
   items: {
