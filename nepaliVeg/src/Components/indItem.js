@@ -62,7 +62,7 @@ const List = ({navigation}) => {
               Price
             </Text>
             <View style={styles.tiles}>
-              <Text style={styles.textTilesA}>Price not UPDATED</Text>
+              <Text style={styles.textTilesA}>Price not UPDATED for today</Text>
             </View>
           </View>
         )}
