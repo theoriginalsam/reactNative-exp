@@ -46,6 +46,12 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <Text style={styles.textHeader}>Welcome to the Humour Area</Text>
+        <Card style={styles.card}>
+          <Text style={styles.textTitle}>QUOTE OF THE MOMENT</Text>
+          <CardContent text={Quotes[randomQ].quoteText} />
+          <Text style={styles.textAuthor}>-{Quotes[randomQ].quoteAuthor}</Text>
+        </Card>
         <BannerAd
           unitId="ca-app-pub-8443845632043511/6200111189"
           size={BannerAdSize.FULL_BANNER}
@@ -53,14 +59,6 @@ const Home = () => {
             requestNonPersonalizedAdsOnly: true,
           }}
         />
-        <Text style={styles.textHeader} h4>
-          Welcome to the Humour Area
-        </Text>
-        <Card style={styles.card}>
-          <Text style={styles.textTitle}>QUOTE OF THE MOMENT</Text>
-          <CardContent text={Quotes[randomQ].quoteText} />
-          <Text style={styles.textAuthor}>-{Quotes[randomQ].quoteAuthor}</Text>
-        </Card>
         <Card style={styles.card}>
           <Text style={styles.textTitle}>JOKE OF THE MOMENT</Text>
           <CardContent text={JokesC[randomJ].body} />
@@ -75,6 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     marginVertical: 10,
+    marginHorizontal: 20,
   },
   container: {
     flex: 1,
@@ -83,6 +82,7 @@ const styles = StyleSheet.create({
   textHeader: {
     marginTop: 50,
     textAlign: 'center',
+    fontSize: 20,
   },
   textTitle: {
     alignSelf: 'center',
