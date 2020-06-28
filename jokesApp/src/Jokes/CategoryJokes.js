@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import {Card} from 'react-native-material-ui';
 import admob, {
   MaxAdContentRating,
@@ -38,36 +38,42 @@ const CategoryJokes = ({navigation}) => {
   }, []);
 
   return (
-    <View>
-      <BannerAd
-        unitId="ca-app-pub-8443845632043511/6200111189"
-        size={BannerAdSize.FULL_BANNER}
-        requestOptions={{
-          requestNonPersonalizedAdsOnly: true,
-        }}
-      />
-      <FlatList
-        data={filtered}
-        keyExtractor={(item) => item.id}
-        renderItem={({item}) => {
-          return (
-            <View style={{backgroundColor: 'grey', padding: 10}}>
-              <Card>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    color: 'black',
-                    padding: 10,
-                    margin: 10,
-                  }}>
-                  {item.body}
-                </Text>
-              </Card>
-            </View>
-          );
-        }}
-      />
-    </View>
+    <ScrollView>
+      <View>
+        <BannerAd
+          unitId="ca-app-pub-8443845632043511/6200111189"
+          size={BannerAdSize.FULL_BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
+        <FlatList
+          data={filtered}
+          keyExtractor={(item) => item.id}
+          renderItem={({item}) => {
+            return (
+              <View
+                style={{
+                  backgroundColor: 'grey',
+                  padding: 10,
+                }}>
+                <Card>
+                  <Text
+                    style={{
+                      fontWeight: 'bold',
+                      color: 'black',
+                      padding: 10,
+                      margin: 10,
+                    }}>
+                    {item.body}
+                  </Text>
+                </Card>
+              </View>
+            );
+          }}
+        />
+      </View>
+    </ScrollView>
   );
 };
 

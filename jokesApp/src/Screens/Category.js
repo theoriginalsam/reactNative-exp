@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
 import {Text} from 'react-native-elements';
 import JokesC from '../JSON/joke.json';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Category = ({navigation}) => {
   let i = 0;
@@ -13,39 +13,41 @@ const Category = ({navigation}) => {
   const uniq = [...new Set(category)];
 
   return (
-    <View>
-      {/* <Text
+    <ScrollView>
+      <View>
+        {/* <Text
         style={{
           fontSize: 15,
           fontWeight: 'bold',
           margin: 20,
           alignSelf: 'center',
-          color: 'blue',
+          color: 'grey',
         }}>
         BROWSE THROUGH MANY CATEGORIES
       </Text> */}
-      <FlatList
-        style={styles.container}
-        numColumns={2}
-        data={uniq}
-        keyExtractor={(item) => item}
-        renderItem={({item}) => {
-          return (
-            <View style={styles.viewC}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('CategoryJokes', {
-                    item: item,
-                    results: JokesC,
-                  });
-                }}>
-                <Text style={styles.category}>{item}</Text>
-              </TouchableOpacity>
-            </View>
-          );
-        }}
-      />
-    </View>
+        <FlatList
+          style={styles.container}
+          numColumns={2}
+          data={uniq}
+          keyExtractor={(x, i) => i}
+          renderItem={({item}) => {
+            return (
+              <View style={styles.viewC}>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('CategoryJokes', {
+                      item: item,
+                      results: JokesC,
+                    });
+                  }}>
+                  <Text style={styles.category}>{item}</Text>
+                </TouchableOpacity>
+              </View>
+            );
+          }}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
