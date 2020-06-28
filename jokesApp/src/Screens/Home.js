@@ -11,14 +11,13 @@ import {
 } from 'react-native-cards';
 import JokesC from '../JSON/joke.json';
 import Quotes from '../Quotes/quotes.json';
-import admob, {MaxAdContentRating} from '@react-native-firebase/admob';
-import {
-  InterstitialAd,
-  RewardedAd,
+import admob, {
+  MaxAdContentRating,
   TestIds,
+  BannerAd,
+  BannerAdSize,
 } from '@react-native-firebase/admob';
 
-import {BannerAd, BannerAdSize} from '@react-native-firebase/admob';
 const Home = () => {
   const number = JokesC.length;
   const numberQ = Quotes.length;
@@ -47,7 +46,13 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <BannerAd unitId={TestIds.BANNER} size={BannerAdSize.FULL_BANNER} />
+        <BannerAd
+          unitId="ca-app-pub-8443845632043511/6200111189"
+          size={BannerAdSize.FULL_BANNER}
+          requestOptions={{
+            requestNonPersonalizedAdsOnly: true,
+          }}
+        />
         <Text style={styles.textHeader} h4>
           Welcome to the Humour Area
         </Text>

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {Card} from 'react-native-material-ui';
+import admob, {
+  MaxAdContentRating,
+  InterstitialAd,
+  RewardedAd,
+  TestIds,
+  BannerAd,
+  BannerAdSize,
+} from '@react-native-firebase/admob';
 
 const CategoryJokes = ({navigation}) => {
   const id = navigation.getParam('item');
@@ -11,9 +19,33 @@ const CategoryJokes = ({navigation}) => {
   const filtered = result.filter((result) => {
     return result.category == id;
   });
+  useEffect(() => {
+    admob()
+      .setRequestConfiguration({
+        // Update all future requests suitable for parental guidance
+        maxAdContentRating: MaxAdContentRating.PG,
+
+        // Indicates that you want your content treated as child-directed for purposes of COPPA.
+        tagForChildDirectedTreatment: true,
+
+        // Indicates that you want the ad request to be handled in a
+        // manner suitable for users under the age of consent.
+        tagForUnderAgeOfConsent: true,
+      })
+      .then(() => {
+        // Request config successfully set!
+      });
+  }, []);
 
   return (
     <View>
+      <BannerAd
+        unitId="ca-app-pub-8443845632043511/6200111189"
+        size={BannerAdSize.FULL_BANNER}
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }}
+      />
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.id}
